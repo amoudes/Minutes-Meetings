@@ -1,0 +1,68 @@
+Meeting 07 16-03-2021
+
+Attending: 
+ Thijs Oudes
+ Ondrej Rokos
+
+DISCUSSION:
+--------------------------------------------------------------------------------------------------------------------
+
+Points last week:
+ - Research plan
+  - Sufficiently detailed?
+     - More emphasis on patterning mode optimization in part II
+
+ - Planning
+  - Evaluate planning
+  - What to do with Part III?
+
+
+ - Background information
+  - Rewriting parts
+  - Curly brackets p4-p5?
+  - p3 comment about continuity
+
+
+Tasks this week
+ - Meeting with Ron
+ - Finishing report
+  - Working through comments Ondrej
+
+multiscale - asymptotic expansion comment
+we dropped part IV so multiscale does not have to be that elaborate
+
+problem definition - explain importance of patterning modes well
+
+SUMMARY MEETING
+--------------------------------------------------------------------------------------------------------------------
+
+ - Research plan
+  - Part IV will be considered too much work for this project. Therefore, only Parts I-III will be considered
+  - The novelty in our project will be the optimization for the patterning mode. As far as we know this has not been
+    done before.
+  - Part III is nice to include as an end goal but should not be considered an absolute requirement for the project.
+    Therefore the multiscale aspect of the project is reduced to investigating the patterning modes and would be a 
+    good follow-up project.
+  - The multiscale framework already exists and therefore Part III is not the main interest of the project.
+
+ - Project planning
+  - Since optimizing the microstructure for the patterning mode will be the "core" of the project I should reserve a
+    bit more time for that in the project planning
+  - Right now I reserverd time for report writing at the end of the entire project. I should disperse is more
+    throughout the project. It makes sense to write sections when it is fresh in my mind.
+
+ - Further comments
+  - I will be able to finish the report this week. I will send a draft to Ondrej preferably on Thursday and Friday
+    latest.
+  - Next week Tuesday I will have a meeting with Ondrej and Ron to talk about the preparation report and goals. If
+    all is well I should be able to start with the project next week Tuesday (23-03).
+
+TASKS THIS WEEK
+--------------------------------------------------------------------------------------------------------------------
+ - Finish the preparation report on Thursday
+  - Work through Ondrej's comments
+  - Write introduction part
+  - Rewrite multiscale analysis (though briefly)
+  - Rephrase problem statement. Highlight the emphasis on patterning modes
+
+  

@@ -1,0 +1,15 @@
+Minutes Meeting 09-04-2021
+
+Attending:
+ Thijs Oudes
+ Ondrej Rokos
+
+DISCUSSION
+---------------------------------------------------------------------------------------------------------------------
+
+ - test pull and shear on FE2 - DONE
+ - Run code on cluster from now on. Contact Leo Wouters L.H.G.Wouters@tue.nl
+  - Send him an email and ask for access to the cluster. - DONE
+ - compare MM with DNS. Do this for 12 holes vertical and 2/4 horizontal
+ - Look at implementation of MM code in paper Sylvia
+ - install Git and override changes - DONE

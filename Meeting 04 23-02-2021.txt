@@ -1,0 +1,60 @@
+Meeting 04 23-02-2021
+
+Attending:
+ Thijs Oudes
+ Ondrej Rokos
+
+_________________________________________________________________________________________________________________
+
+NOTES DURING MEETING
+-----------------------------------------------------------------------------------------------------------------
+Continuation of questions from the previous meeting.
+
+- we discussed adjoint method
+
+- checkerboarding - method that is mostly used is averaging of densities
+                  - filtering of sensitivities is also used in the book
+
+- further reading - non linear topology optimization p86
+                    buckling optimization is also interesting to read p86
+
+- Ondrej will send me a few papers on non-linear buckling topology optimization
+
+Discussion
+
+- Optimization of E on the microscale
+
+- Read non-linear and buckling
+
+- Buckling of coupling on microscale and macro scale
+
+- Next part: write preparation report
+
+
+
+DETAILED SUMMARY MEETING
+-----------------------------------------------------------------------------------------------------------------
+
+- We discussed details of the adjoint method. This method allows to implicitly determine the derivative of a
+  function and is computationally much more favourable then finite differences.
+
+- We discussed checkerboarding and ways of preventing it. In most cases an averaging filter is applied. This
+  involves a convolution operator which Ondrej explained as well.  
+
+- We had a small discussion on the structure of the entire graduation project.
+  Typically 4-6 weeks are used for the preparation phase which is a bit longer than usuall. This is done to really
+  prepare well for the project phase, because when it starts your deadline is set and the clock starts ticking.
+
+  Halfway through the project I will have to do a MoM-meeting presentation
+  At the end I have to hand in my project report and defend my thesis in front of a jury, which is a closed door
+  meeting of ~30min with Ondrej, Ron and some other teachers.
+
+- For this week I will have to do two things:
+  1) Read on non-linear TO in the book. This includes optimization for bucklinkg
+
+  2) Write preparation report section on the background information
+
+- Next week when I have sufficient background information, we will start discussing the goals and the details of
+  the project. We maybe start divinding the project up into blocks of work.
+
+-----------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,73 @@
+Meeting 03 19-02-2021
+
+Attending: 
+ Thijs Oudes
+ Ondrej Rokos
+_________________________________________________________________________________________________________________
+
+PAPERS
+
+
+QUESTIONS:
+-----------------------------------------------------------------------------------------------------------------
+
+ Bendsoe & Sigmund - Topology Optimization
+
+General questions:
+ - p3  Need some explanation on mathematical formulation of a(u,v).
+       How to interpret a(u,v)?
+       Why include arbitrary virtual displacement v strain term in energy bilinear form?
+ - p7  SIMP dot not necessarily lead to an existing solution. Why?
+ - p10 I don't fully understand the derivations on this page.
+       Lagrange multipliers are introduced here again. Why are they necessary here?
+       How to interpret Eq. (1.12)?
+ - p15 Why is a sensitivity analysis step required in TO?
+       (From what I have understood, sensitivity analysis prevents checkerboard patterning and enables
+        mesh convergence.)
+ - p17 Adjoint method is mentioned in multiple papers on TO. What is it and how does it work?
+	-> Simple way of computing gradients
+ - p18 How do they obtain Eq. (1.17)?
+ - p19 Method of Moving Asymptotes (MMA) is introduced with mathematical details. I understand it is used as an
+       optimization method which is especially useful for problems with a lot of constraints. I do not understand
+       the working principle and implementation in the TO though.
+
+Further sections of this chapter discuss methods to obtain a converging solution upon mesh refinement and
+to prevent checkerboard patterns. I understand why they are necessary though and I do have questions about them
+but at this point in the project they are not that relevant in my opinion.
+
+-----------------------------------------------------------------------------------------------------------------
+
+ Sigmund - A 99 line topology optimization code written in Matlab
+
+This paper provides a commentary on a simlpe 2D Matlab implementation of a minimum compliance problem by 
+Ole Sigmund. It serves as a good starting point for TO and is very useful for educational purposes.
+
+General questions:
+ - Eq. (2) why unclude m? - This is the same parameter as zeta in the book no p10.
+ - I fully understand the optimal criteria (OC) based optimizer. For more simpler problems OC is more often to 
+   update the design criterion (as opposed to MMA). Therefore I think that it is important that I understand how
+   it works.
+_________________________________________________________________________________________________________________
+
+DISCUSSION
+ - In later stage if we want to improve the optimization procedure we can introduce level set instead of SIMPs
+
+
+ - Discuss goal of project again
+  - Inverse homogenization
+  - Bifurcation buckling
+ - Further reading?
+ - Project phase report
+  - write homogenization
+  - write micromorphic homogenization
+  - Topology optimization
+
+
+
+
+
+
+
+
+
+

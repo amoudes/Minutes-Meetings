@@ -1,0 +1,113 @@
+Meeting 02 - 16-02-2021
+
+QUESTIONS:
+
+Homogenization
+______________________________________________________________________________________________________________
+ Van Bree - A Newton solver for micromorphic computational homogenization enabling 
+            multiscale buckling analysis of pattern-transforming metamaterials 
+
+ Comments:
+ - Is it correct to say that this model is based on potential energy minimization?
+   Compared to FE1/FE2 schemes they were based on momentum balance, correct? But still a similar
+   derivation/outcome is obtained.
+
+ General questions:
+ - Why is the previous paper by you Ondrej quasi-Newton and latest full Newton?
+ - Why is full bifurcation analysis possible in latest paper and not in your paper?
+     quasi vs newton
+ - Aren't solutions very sensitive to selection of patterning mode?
+ - What are size effects in homogenization schemes?
+ - p4 - comment about ensemble averageing
+     don't delve deeper in this
+ - Presented model builds on first order homogenization model, why not on FE2?
+     different kind of mode
+ - What boundary conditions are applied on the RVE?
+     Just periodicity.
+
+ Mathematical derivations:
+ - Explain constraints in more detail
+   What does orthogonality mean in this context?
+      No contact between the two vectors.
+ - What are Lagrangian multipliers and how do they work? <----
+      Saddle point problem, min max problem -> helping
+ - p7 - How to interpret constraint term in Lagrangian 
+ - p7 - All derivations
+ - p8 - How to interpret stress like terms and why are they needed?
+ - p9 - Why is second variance required for this model?
+      stiffness and bifurcation analysis.
+ - p10- How does the iterations scheme work?
+ - How important is it too understand the details of numerical implementation at this point?
+ - p13- How does the bifurcation analysis actually work? - How can a perturbation push an unstable system to a
+   stable system?
+
+--------------------------------------------------------------------------------------------------------------
+
+ Rokos - Micromorphic computational homogenization for mechanical metamaterials with 
+         patterning fluctuation fields
+
+ General questions:
+ - Why define a translation "zeta" w.r.t. specimen's boundary?
+
+ Mathematical derivations:
+ - p5 - How to interpret Eq. (3)?
+ - p8 - Why is derivative of constutive energy density term equal to first Piola-Kirchoff stress tensor?
+ - p14- How to interpret Eq. (41)
+
+
+--------------------------------------------------------------------------------------------------------------
+
+ Kouznetsova - Multi-scale second-order computational homogenization of multi-phase materials: a nested finite 
+               element solution strategy
+
+ Comments:
+ - Is it correct to say thay by increasing continuum requirements (i.e. second order), non-local behaviour can
+   be captured?
+
+ Questions
+ - I have difficulties understanding the FE implementation.
+ - How does the condensation of the stiffness matrix actually work?
+ - What is meant by closed form constitutive modeling? - p14
+ - Most of the mathematical derivations are too much for my understanding.
+
+--------------------------------------------------------------------------------------------------------------
+
+ Kouznetsova - Multi-scale constitutive modelling of heterogeneous materials with a gradient-enhanced 
+               computational homogenization scheme
+
+ See paper for questions
+
+
+--------------------------------------------------------------------------------------------------------------
+
+ Kouznetsova - An approach to micro-macro modeling of heterogeneous materials
+
+ General questions:
+ - Why is FE simulation required on RVE as only forces on three corners os RVE are required?
+ - RVE is evaluated on an integration point, why not on a node?
+ - What does the iterative scheme look like?
+ - Elimination of free degrees of freedom I don't understand - notes p33
+ - Need more explaining of the incremental iterative nested solution scheme - notes p42
+
+______________________________________________________________________________________________________________
+
+Topology optimization
+______________________________________________________________________________________________________________
+
+ Bendsoe - Topology optimization
+
+ General questions:
+ - Explain conditions of optimility again - p9-10
+ - p10 - Eq. (1.12) How to interpret
+ - Why apply a sensitivity analysis - MMA? Need more explanation on this part
+   Implementation of this part is hard to follow. p18-20
+ - I find most of the solutions to mesh-convergence and checkerboard patterns hard to follow.
+   How important is it to understand these at this point?
+
+
+______________________________________________________________________________________________________________
+
+Comments meeting:
+
+ - start with writing a bit on computational homogenization, write down basic details
+ - 

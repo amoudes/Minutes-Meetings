@@ -1,0 +1,57 @@
+Notes meeting 1 - introduction - 09-02-2021
+
+ OUTLINE
+- Prep phase 4-6 weeks
+- In this period determine goal. Make it clear.
+  Define steps
+  Individual building blocks
+  Desicions on coding language etc.
+- Determine planning based on findinds and on decisions
+- Project phase starts after this and lasts 6-8 months
+ 
+
+- topology research
+- collaboration topology optimization Expert - Ole Sigmund
+- extra supervisor Ron Peerlings
+  mainly contact for Ron and Ondrej
+- My primary contact person will be Ondrej
+  Weekly meeting every tuesday 11:00
+  Every other week a meeting with Ron
+
+ GENERAL IDEA PROJECT
+Individually models and theory exists. However as the scale factor in our particular problem is not that large,
+splitting the problem up into two is not perfectly possible since microstructure affects topology optimization
+and vice versa. Hence the goal is to design a homogenization model that combines the two. Other factors like
+non-linearity, instabilities, etc also come into play, though the exact details at this point are a bit vague
+and hopefully will become more clear upon reading.
+
+
+The project is a pilot project for topology optimization in combination with microscale homogenization.
+Quite some freedom on what we actually want to do.
+
+Keywords:
+- inverse homogenization
+- non-local buckling model
+- micro-morphic
+
+- two problems:
+ - topology optimizatoin
+ - non-local problem
+
+- non-linear applications
+
+connect the two
+connection is possible only local
+
+coupling (homogenization) is the challenging part
+
+design of both scales
+connect
+
+SUGGESTIONS UPCOMING WEEK
+- read papers on topology
+- first two weeks reading on topology, homogenization (and more)
+  Try to understand basics of topology optimization and homogenization
+
+- Idea is that I own the theory and applications and are able to answer questions
+- Use of existing models

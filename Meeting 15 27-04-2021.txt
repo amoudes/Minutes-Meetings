@@ -1,0 +1,106 @@
+Meeting 15 27-04-2021
+
+Attending: 
+ Thijs Oudes
+ Ondrej Rokos
+
+DISCUSSION
+---------------------------------------------------------------------------------------------------------------------------
+
+Items last week:
+ DONE      Made small corrections to MM script
+
+ NOT DONE  Verification steps (energy & convergence rate)
+
+ DONE      Learned bash script to execute programs on cluster
+	   Q - How to save matlab command window in the cluster?
+           Q - How to set PATH to subfolder? Currently when I execute .pbs file in subfolder gmsh commands are not 
+               recognized. Therefore only running code in main hole_sheet_model folder a.t.m. and parallel not
+               possible because of shared gmsh folder.
+	   Explain setup with while-loop and sleep function.
+
+ DONE      Started on the set up of limitation experiments
+	   - Performed DNS simulations on fixed bigger hole (D1) and variable smaller hole D2
+           - Currently running MM on same hole sizes
+
+	   Q - Difficulties analyzing results. Would be good to discuss suitable field to work in for MM code.
+
+	   Q - Analysis thus far have been performed on finite strip. Should I move on to infinite strip?
+
+ DONE      Check whether FE2 switch works in MM script.
+	   Discuss FE2 results.	
+
+           Q - FE2 switch does not result in v1 ~ 0 field. One corner is significantly larger than 0 under default
+               input settings. How come?
+
+NOTES MEETING
+---------------------------------------------------------------------------------------------------------------------------
+
+ - Change nr Gauss points from 6 to 3.
+ - Tasks for next week:
+  - include kinematic plots for next week's presentation
+  - Sticking D1 is okay, and keep D2 variable. I can change D1 a bit to see what small differences make.
+  - mesh convergence study
+  - mesh density compatibility
+  - prepare presentation before Friday
+  - var. hole size within RVE
+
+SUMMARY MEETING
+---------------------------------------------------------------------------------------------------------------------------
+
+Cluster
+ - First we discussed how things went running simulations on the cluster. Discussed my problems and how I solved it.
+   Problem with gmsh in subfolders is most likely due to inability of Matlab to create a folder named gmsh and not the PATH
+   to gmsh since that is added to the environment variables. I will try to run it again with subfolders and see whether
+   this works.
+ - Some tips about using 'enters' and submit stuff in bash. Appearantly the 'enter' command may give some problems and I
+   should be carefull with using it. Use an alternative (forgot name) to use it instead.
+ - Diary functions of Matlab command window can be found in the log file of in the same folder. No need to use 'diary on'
+   in Matlab.
+
+Limitation experiments
+ - We will base the working range of the MM script on the error of the MM code compared to the DNS simulations.
+ - To avoid global buckling we will after current simulations, run simulations using a infinite macroscopic geometry.
+   For linear cases infinite will only be in horizontal direction - for periodic case infinite will be both vertically
+   and horizontally.
+ - I did not show plots of meshes. So it was difficult to base conclusions on the stress and energy only. I should 
+   include deformation of macroscopic mesh on top of DNS simulation to see whether there are discrepansies.
+ - Currently the amount of Gauss integration points in quadratic triangular elements is 6. I can safely change this 
+   to 3. This will shave of computational time. Do a comparison simulation to check the effects and whether the 
+   difference in results is significant.
+ - It is okay for me to stick to a fixed large hole size (D1) and vary the smaller hole size. I can still do a few
+   simulations with other large holesizes (D1 = 0.9 / 0.95 ) to check the effect.
+ - The mesh density of the DNS and the RVE in the MM should be comparible. Ideally I should perform a mesh convergence
+   study on the MM and DNS to check what should be a suitable mesh size. This is however computationally quite
+   expensive. As the mesh convergence study was already performed in a previous paper I do not have to do it again.
+   It might still be smart to do so.
+
+FE2
+ - A simple switch in the MM code still gives a non-zero v1 field. Including the switch is not as easy as expected.
+   I will instead make use of the dedicated FE2 script from now on.
+
+Meeting Ole Sigmund
+ - Earliest possible meeting with Ole Sigmund would be on April 30th. I should make sure that before that date I
+   have a presentation ready detailing the goal, set-up, challenges of the project. This has the hightest priority
+   a.t.m.
+
+TASK THIS WEEK
+---------------------------------------------------------------------------------------------------------------------------
+
+Limitation experiments
+ - Continue running simulations on the MM code
+ - Refine post processing. Include kinematic plots
+ - Perform mesh convergence study on DNS and MM RVE.
+ - For comparison run limitation experiments on FE2 scripts
+  - Adapt FE2 script s.t. it allows variable RVEs
+ - Implement variable hole size in an RVE
+ - Implement  and run non perfect hole allignment in RVE and DNS
+
+Meeting Ole Sigmund
+ - Prepare presentation before Friday.
+ - 
+
+
+
+
+

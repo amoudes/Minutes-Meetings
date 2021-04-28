@@ -1,0 +1,43 @@
+Meeting 11 06-04-2021
+
+Attending: 
+ Thijs Oudes
+ Ondrej Rokos
+
+DISCUSSION
+--------------------------------------------------------------------------------------------------------------------
+
+Questions
+
+Code
+ - How to compute the external/reaction forces?
+    - Ku = f? Then only locate nodes upper boundary?
+      
+      Answer:
+      horizontal 2*nodes - 1
+      vertical   2*nodes
+
+      Grad_hess and extract internal forces from G and flip signs
+
+    - Through find UFP? Probably not, I suspect F is deformation gradient tensor and P, first PK stress tensor
+ - If I compute the mesh without holes, it seems independent of what type cellsize, hmax, elementsize I give. 
+   How can I change element size?
+   
+   (For problems WITH holes this was not a problem. I was able to change the element size.)
+
+Paper Sylvia
+ - Von Mises truss. How is is that the potential energy is not symmetric? (I expected it to be.) Fig. A.14.
+ - Buckling force F2 (p31) is not further considered. Is this because F1 is the lower of the two. If so, what is the
+   relevance/physical interpretation of F2?
+
+--------------------------------------------------------------------------------------------------------------------
+
+Discussion points
+ - Run through the FE2 code
+
+ - Understand where things are in the FE2 code.
+  - Look into it.
+  - Simple code slender column
+  - Testing the FE2, look at lack of communication
+ - Already look into MM. -> simplest code: MM_1D ; MM_2d_global_local.m
+ - External forces in RUN_simple

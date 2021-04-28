@@ -1,0 +1,72 @@
+Notes meeting 05 02-03-2021
+
+Attending:
+ Thijs  Oudes
+ Ondrej Rokos
+_____________________________________________________________________________________________________________________
+
+QUESTIONS PAPERS
+---------------------------------------------------------------------------------------------------------------------
+
+ Bendsoe & Sigmund - Topology optimization
+
+ Questions:
+  - Buckling
+    - p77 G(u) is the geometric stiffness matrix. How do you compute it and what is the physical interpretation?
+          Need some explanation of Eq. (2.7).
+    - p79 Last time we mentioned that a partial derivative w.r.t. an eigenvalue is (very) difficult it seems like 
+          that Eq. (2.9) gives an expression for such a derivative. Is this correct?
+         - diffucult if you have higher multiplicity of the eigenvalue
+
+  - Geometrically non-linear problems
+    - p86 Why apply a residual based method instead of a Ku=f? I assume it is because Ku=f is a linear problem.
+    - p87 They mention the Piola-Kirchoff stress tensor s, I assume this is the second-PK stress tensor. Why use
+          this one and not the first one?
+    - p87 In sec. 2.5.2 three objective functions are listed of which the third "minimization of complementary 
+          elastic work" is suggested to be the most robust as provided a stable structure for a load up to a certain
+          magnitude as opposed to the other methods which are optimized for one specific load + magnitude.
+          So the question is why and when would you apply the other two objective functions?
+    - p89 How do you apply Eq. (2.16). Do you find an optimal topology for each increment?
+
+---------------------------------------------------------------------------------------------------------------------
+
+_____________________________________________________________________________________________________________________
+
+DISCUSSION
+
+ - Multiscale TO
+   - Two-scale topology optimization in computational materialdesign An integrated approach
+      Q: Compatibility issues between cells?
+      Q: How do you verify such model?
+   - Recent Advances on Topology Optimization of Multiscale Nonlinear Structures
+   - Micro-macro concurrent topology optimization for nonlinearsolids with a decoupling multiscale analysis
+      Q: How is the decoupling possible? And why is it different from regular FE2?
+		
+	- Give an outline of methods that are proposed. People do either micro or macro stability but not combined.
+	- Homogenization asymptotic homogenization or FE2.
+	- 
+
+ - Project goal
+  - Aim
+  - Subgoals
+  - Planning 
+
+ - Preparation report
+  - for questions see paper.
+  - formulation TO
+  - Should multiscale TO be included in background information?
+
+ - ...
+
+_____________________________________________________________________________________________________________________
+
+Next week
+ - finish BA and Problem definition
+ - read more on multiscale TO
+ - Ondrej will invite me to the repository 
+ - Look at code
+
+
+
+
+

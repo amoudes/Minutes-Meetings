@@ -1,0 +1,54 @@
+Meeting 13 13-04-21
+
+Attending: 
+ Thijs Oudes
+ Ondrej Rokos
+
+DISCUSSION
+---------------------------------------------------------------------------------------------------------------------------
+
+Questions
+
+Microscopic problem:
+ - Comment: I notice that for micro stiffness in paper D is used and in code C. This is confusing.
+ - Eq (20-25) where can I find them in the code?
+ - Paper mentions Dww*. Where is this used in the code?
+
+Macroscopic problem:
+ - For confirmation: P = theta^ig, Q = Lambda^ig, R = Pi^ig
+ - Why again condens out w and Lagrange multipliers?
+ - Lines 526-534. Filling in K00e, K0ie, Kiie from Ke. I don't understand why?
+ - How do the patterning modes exactly work.
+    From what I understand you specify a specific deformation you know beforehand on the RVE and you determine the "size" v_i on
+    that Gauss interpolation point. Then I don't really understand how cells are able to communicate information with each other.
+
+    It can also be that you prescribe a global deformation, but then how does the RVE know how to deform? In this way you have 
+    communication but how do you know a RVE should deform?
+ - solver_micromorphic.m - line 33 - Why duM = 0*f? and not duM = 0?
+ - Running the code takes quite a while. Lots of unstable microsolver messages. Why?
+ - engergy_micromorphic_2d.m - line 305 - What is EH?
+ - Eq (1)/(2) p4 - Do you actually add up the three compoments to get the macroscopic deformation?
+   Is this somewhere in the code?
+
+---------------------------------------------------------------------------------------------------------------------------
+
+Points of discussion
+ - Cluster tutorial
+ - Set-up limitation experiments
+  - column, change radius size.
+  - try to implement different RVE mesh
+  - different hole size depending on location
+  - each gauss point has its own RVE
+  - start off with regular FE2 and DNS
+  - sine function / linear function for hole diameter
+  - add switch in MM code such that FE2 is obtained. C = [];
+     
+  - Progressively work to periodic stacking of holes
+  - second step. Offset holes from perfect alignment
+  - For comparison I can P22 same Fig. 7  
+
+  - create my own branch
+
+  basic testing can still be done on my laptop
+  
+ - Analytical solution check, Euler beam.

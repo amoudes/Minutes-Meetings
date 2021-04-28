@@ -1,0 +1,76 @@
+Meeting 08 23-03-2021
+
+Attending:
+ Thijs Oudes
+ Ondrej Rokos
+ Ron Peerlings
+
+DISCUSSION:
+--------------------------------------------------------------------------------------------------------------------
+
+- Points last week:
+  - Preparation report second draft
+
+- What is the goal of Part III. Discuss what to do with this part.
+- p6 - Discuss notation TO.
+- p9 - What do you mean by domain decomposition?
+
+- patterning modes needs to be continuous to enforce compatibility
+- wave length of a mode
+- need a plan B, project sounds very ambitious
+ - multi-scale buckling analysis is already very difficult and ambitious
+- change wave length of the patterning mode at the macroscale
+ - optimize microstructure for wavelength
+- simplified model: fixed microstructure, distort lattice with fixed microstructure. spatially varying period,
+                    additional struts.
+  another goal:     fix period, start optmizing the microstructure
+- Maybe include another part in between I and II in which we assume fixed microstructure varying period. 
+  Regular array of beams for that microstructure come up with fluc functions, allow freedom at microstructure to 
+  change fluc func at macroscale. Design freedom of microsturcture (smaller wider).
+- Part III - fix pattern, design pattern according to predetermined patterning mode.
+- After part I, I could start to work on parts II and III parallel to see where to allocate the most time.
+
+- start date could still be 23rd 
+
+- change paper and send it to Ondrej and Ron
+
+- 
+
+SUMMARY:
+--------------------------------------------------------------------------------------------------------------------
+
+First meeting with Ron. Unfortunately he was not fully able to read my preparation report before today's meeting so
+I had to explain the setup and plan for the project. 
+
+He had several comments:
+ - Project seems like a lot of work and is ambitious. Nothing wrong with being ambitious but one should not aim too
+   high.
+ - He proposed to include a step between Parts I and II. Since we already had some doubts about part III we would let
+   go of that part and focus on I and II.
+ - Since part III was already somewhat risky we included more safe and doable ideas in part I and II.
+ - The plan as it is does not require a lot of changes. It only requires some reformulations of parts I and II.
+ - The idea of wavelength/period was something quite important. Ondrej had assumed it constant but Ron had doubts
+   about how realistic it was and about the uniqueness of the solution if it remained open.
+ - Therefore step inbetween I and II would focus on optimizing the microstructure w.r.t. stability (highest critical
+   buckling force) for fixed microstructure where we change some key characteristics, such as RVE size, hole size,
+   ligament thickness, etc...
+ - In part I we would then investigate the limits of the computational homogenization scheme and see how big the
+   design window is. In part II-new we would subsequently play with the design window to find an optimal
+   optimal microstructure w.r.t. buckling force with varying period.
+ - Part II-old remains as it is and here we focus on designing a microstructure according to a predescribed patterning
+   mode with fixed period.
+ - Part II-new would therefore be a small step towards multi-scale buckling. But we know it is doable so low risk.
+
+After I had a meeting with just Ondrej, here we discussed:
+ - Summarizing meeting with Ron.
+ - Setting up plans for this week. I can already send an invite to Ondrej for looking through the micromorphic code in
+   the repository. There are a few technicalities that require explaining.
+ - Work on the report. Change it and send it to Ron and Ondrej so they can check. Only sections 3, 4, 5 need new
+   comments. Sections 1 and 2 are already okay. 
+
+Tasks this week:
+ - Adapt the prep. report according to the things we discussed in the meeting
+ - Set a date for meeting with Ondrej for looking into micromorphic code
+ - Write the project phase document and send it to mech office.
+
+

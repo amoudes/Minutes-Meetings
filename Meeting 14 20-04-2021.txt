@@ -1,0 +1,102 @@
+Meeting 14 20-04-2021
+
+Attending:
+ Thijs Oudes
+ Ondrej Rokos
+
+DISCUSSION
+---------------------------------------------------------------------------------------------------------------------------
+
+Items last week:
+ - Set up limitation experiments
+  - Variable hole diameter DNS simulation 
+    DONE - Succesfully managed to do this. I am able to run a DNS simulation for various hole diamters.
+    
+    Q    - No information about deformation is included (MM) therefore deformation can seem a bit off. How do you 
+           know this DNS simulatin is actually correct?
+
+  - Variable hole diameter in MM code
+    DONE- I made sure that I construct a mesh for each RVE and solve it accordingly. I made use of a cell structure.
+           In the DATA structure each RVE is assigned to its own cell. I can make linear, periodic and constant hole
+           diameters.
+           SHOW RESULTS and DISCUSS IMPLEMENTATION.
+
+    Q    - How do you make sure that MM code perfectly matches the DNS simulation? (Hole locations)
+
+    Q    - For other than constant diameter gmsh still gives unstable m-solver messages for each RVE in the first
+           step. Any idea why?
+
+    Q    - Difficult to plot individual results such as, mesh, forces, stresses, displacements.
+
+  - Include switch in MM code to FE2.
+    NOT DONE - Suggested to include a switch that empties constraint matrix: C = []. I thinks it should include the
+               periodic boundary conditions, i.e. C = Cpbc.
+
+    Q        - How to include switch to FE2?
+               Described method gives lots of warning messages.
+
+
+ - Comparison with DNS, through P22 or displacement, reaction force. 
+   NOT DONE - Not enough time
+
+ - Analytical solution check
+   NOT DONE - Not enough time
+
+---------------------------------------------------------------------------------------------------------------------------
+
+Items this week
+ - Cluster tutorial
+ - Discuss results last week
+ - Validation results
+
+ - Move meeting to another time
+
+Comments meeting
+ - Use shape functions N instead of tcoord in obtaining Gauss coordinates.
+ - check code by evaluating energies and forces using finite differences.
+  - another check - measure rate of convergence of Newton solver
+ - Compare MM variable hole diameter with DNS or FE2.
+ - DNS: run_fluctioations_circles_regular.m
+ - experiment with cluster with simple examples
+ - look at git4bash
+ - Compare examples I ran with DNS, kinematics
+ - Try gradual change in diameter
+ - Set up validation method with DNS
+
+---------------------------------------------------------------------------------------------------------------------------
+SUMMARY MEETING
+
+ - Ondrej's previous meeting ran out again so we decided to change the weekly meeting to a different timeslot: 
+   TUE 16:00-17:00
+ - We first discussed progress of last week. What I did and my questions.
+   Overall pleased to see that implementation of varying hole diameter was successful.
+   Comments code:
+    - Instead of using tcoord, I should use shape functions N to obtain Gauss point coordinates. tcoord works okay for these
+      elements but if we want to make it more generic and use different elements, tcoords might give trouble. Therefore I 
+      should use N.
+    - Also I can consider to make sure that other RVE types also work with the current code so that when I would like to try
+      different elements it works.
+    - Two checks I could do to check correct workings of code would be:
+       A) Check energy and forces by means of finite differences. Use the grad_hess function.
+       B) Check quadratic convergence of Newton solver by log-log plot of the residual. If slope = 2 then correct.
+      These methods provide handles to check correct working of code.
+ - We fixed the FE2 part of the code hopefully by including by including Cv in the constraints matrix C (prevents rigid body
+   modes). Initial results look promising. Micromorphic parts of fe and u are zero.
+   I should still check whether it actually works as intended.
+ - I can move on to work towards real limitation testing of the MM code. I can do this by checking which diameters work well
+   with the MM code.
+   Comparisons should be made directly to the DNS script which will be the RUN_simple.m script. This needs a bit of tweaking
+   still such that it buckles locally instead of globally. To do this I should find a macrosopic geometry that is less
+   slender and thicker. DNS functions as "real" solution.
+
+   FE2 and MM script can be compared with DNS. Use P22 component rather than kinematics.
+ - Second part of the meeting was focussed on the cluster tutorial. It took quite a while to get it to work.
+   From now on I can use the cluster to run large simulations in the background. I should read the manual before doing so
+   just to be sure.
+   Cluster uses bash and git for code. I should read up on bash to get familiar with coding.
+
+
+
+
+
+

@@ -1,0 +1,132 @@
+meeting 06 09-03-2021
+
+Attending:
+ Thijs Oudes
+ Ondrej Rokos
+
+DISCUSSION:
+--------------------------------------------------------------------------------------------------------------------
+
+Report remarks:
+ - General structure
+ - Background information
+  - Multi scale topology optimization
+   - better define the niche that we have
+
+ - Problem definition
+  - auxetic application
+    design macro- and micro 
+
+ - Research plan
+  - How to break it down
+
+  - Exploring boundaries of MM
+    how well it works
+  - limits MM scheme through patterning mode testing
+  - 
+  - stepwise inclusion of homg scheme in TO
+  - include simple microscale optimizing by imposing patterniing mode and optimizing stiffness
+
+  - Defence also counts for project phase, typically reserver 3 weeks final presentation
+  - Prepare report before defence
+
+ - Mid-term presentation after homg block and start op TO
+
+
+Plan for this tweek:
+ - first write down the problem statement and planning
+ - after correct mistakes in BI
+
+  - if meeting thursday morning or wednesday afternoon
+
+--------------------------------------------------------------------------------------------------------------------
+Detailed notus meeting
+
+First report remarks:
+ - General structure
+  1) Start off with some kind of introduction that provides the context in which this report is written. Give 
+     information about metamaterials, graded microstructure and show some images. Also mention importance of
+     buckling
+  2) Rewrite the multiscale TO. Include broader view of current methods. Better define the nice we are looking at.
+     Do this by discussing what has been done and shooting holes into it.
+     Include issues like compatibility issues
+                         patterning modes
+                         coupling between individual cells
+                         coupling macro-micro through homogenization
+                         only linear elastic cases - no non-linear
+     In order to do so I first have to do more research on the papers. Start off by looking at citations and
+     references of the papers Ondrej sent me.
+   
+     Question: What to do with compatility between cells?
+     - Suggestion: if we optimize microstructure with respect to a predetermined patterning mode we hope to find
+       that cell compatibility is automatically satisfied. If not we can employ methods to do so, like full boundary
+       prescription methods, they are computationally expensive though.
+ 
+     Question: What to do with large computational times?
+     - Answer: This project mainly serves as a proof of concept. Optimizing the code w.r.t. efficiency is not part
+       of the goal and comes in later stages.
+  3) Problem definition -> include bullet list of most important goals of the project. Give a detailed breakdown
+     in the section 4 Research plan.
+     
+     Also it is possible to write the problem definition with a specific goal in mind making the project less
+     abstract. During the project we can find some kind of end application. Right now that being the orthopaedic
+     implants.
+
+ - Research plan.
+  - The entire project can actually be categorized into three parts of which the first two are the most important
+    
+    Part I - Homogenization
+     - In this part we will test the limitations of the micromorphic computational homogenization scheme.
+     - The most important aspect of this section is to really understand the patterning modes.
+     - Starting point: Perform limit tests by (i)   Using different RVE orientations
+                                              (ii)  Scaling hole sizes
+                                              (iii) ...
+       Comparison with DNS will provide information about accuracy of MM scheme
+     - Investigating how to determine patterning modes
+      - Graded microstructure
+
+    Part II - Topology Optimization
+     - This part will most definitely be bigger than the first part. Here implementation of the MM scheme in TO is 
+       the final goal. Substeps are:
+      - Single cell microstructure optimization
+       - Investigate microstructure topology optimization w.r.t. a patterning mode(s)
+       - What type of solver to use
+       - Penalization methods (SIMP, level-sets,...)
+       - Linear elastic
+       - Non-linear optimizatin
+       - Buckling/bifurcation analysis
+      - Include the homogenization scheme stepwise
+        - first-order homogenization scheme
+        - (second-order) homogenization scheme
+        - ....other methods....
+        - Micromorphic homogenization scheme
+      - Multi cell microstructure optimization
+       - Investigate microstructure topology optimization w.r.t. a patterning mode(s)
+       - Non-linear optimizatin
+       - Buckling/bifurcation analysis
+   
+  **Part III - Multi-scale topology optimization (MM + TO)** 
+     - Patterning mode testing on graded microstructure
+     - Compatibility testing
+
+     - *Not well defined yet as we might not have enough time to include this within the 8 month project*
+
+ - Further comments
+  - If all goes well next tuesday we will have the first meeting with Ron.
+    As for preparation I will have to finish the first draft of the preparation report by then.
+  - Midterm presentation - this will probably be after I wrapped up the homogenization part of the project and when 
+    I have the first results of the TO
+  - Project planning remark - The defence is also part of the project phase and usually you have it three weeks
+    before the final presentation. Make sure to plan it ahead. Also the final report should mostly be finished by the
+    time of the defence.
+  - Priorities this week:
+   1) Finish research plan - give a detailed breakdown of the entire project
+      Send the finished plan a.s.a.p. to Ondrej. Preferably before thursday so that he can give comments on Friday or
+      we can have a meeting on thursday.
+   2) Do more research on multiscale TO - rewrite the sections after
+   3) Write introduction, problem statement and workout further comments by Ondrej.
+
+
+
+ 
+

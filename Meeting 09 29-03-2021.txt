@@ -1,0 +1,25 @@
+Meeting 09 29-03-2021
+
+Attending:
+ Thijs Oudes
+ Ondrej Rokos
+
+DISCUSSION
+---------------------------------------------------------------------------------------------------------------------
+
+Part I consider as an introductory part. Sniff around and look around and decide then where the main focuss will be
+on this project. Check how much freedom the MM gives and decide after.
+
+I can decide along the way in which direction I am going to take the project.
+
+- MM code
+ - run_simple
+ - run_solver
+  - for initial testing and checking code
+
+ - typically 9 = T6 element types are good
+
+ - for now:
+  - go through simple files and play with the code
+  - then go into FE2
+  - then go into MM

@@ -1,0 +1,32 @@
+Meeting 10 01-04-2021
+
+Attending: 
+ Thijs Oudes
+ Ondrej Rokos
+
+DISCUSSION
+--------------------------------------------------------------------------------------------------------------------
+
+Questions
+ - Run_solver
+  - How do you know "correct" solution? Deformation is different for different element types.
+  - What are threats, and why set it here = 2?
+  - Deformation should not depend on discretization. Yet it does. How do you know the "correct" solution.
+    (similar questions as before)
+  - What do the material parameters m1,m2,... mean?
+
+
+ - Run_simple
+  - What is happening with dtimes in this code? Why take this approach?
+  - How does the bifurcation analysis work here?
+    I need some explanation on the how and why the bifurcation analysis works.
+
+Discussion
+--------------------------------------------------------------------------------------------------------------------
+ - Critical buckling force, we can compute it by determine reaction force.
+   find it by modeling a solid beam with large W/L withoug holes and compare with Euler beams method.
+   Also do this by hand for comparison
+ - Paper from Boyce hyperelastic laws to Young's modulus. Ondrej sent me a paper on it. Read if I am interested.
+ - perform convergence study
+ - Look at thesis by Silvia van Bree and look at Appendix for 2DOF, von Mises truss.
+ - Study energy and instability principles
