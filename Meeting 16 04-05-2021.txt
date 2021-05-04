@@ -1,0 +1,41 @@
+Meeting 16 04-05-2021
+
+Attending: 
+ Thijs Oudes
+ Ondrej Rokos
+
+DISCUSSION
+---------------------------------------------------------------------------------------------------------------------------
+
+Tasks last week:
+ DONE		Continue running MM simulations.
+		Q - Large error at constant hole size which is weird. Not sure why this is the case.
+		Q - Results are not as clear as I would want them to be. Discuss interpretation.
+
+ DONE		Refine post processing. Include kinematic plots.
+		- Rough simulations are done for DNS, MM & FE2 - next step refine at specific region
+
+ DONE		Mesh convergence study on DNS and MM RVE.
+		- Show results and explain conclusion.
+
+ DONE		Adapt FE2 script s.t. it allows variable hole size.
+
+ NOT DONE	Implement non perfect hole allignment in RVE and DNS.
+
+ NOT DONE	Implement variable hole size in an RVE.
+
+ NOT DONE	Determine critical buckling force.
+
+ DONE		Prepare presentation Ole Sigmund
+		- Go through slides
+		
+		Q - How are we going to set up second and third part?
+
+NOTES MEETING
+---------------------------------------------------------------------------------------------------------------------------
+
+SUMMARY MEETING
+---------------------------------------------------------------------------------------------------------------------------
+
+TASK THIS WEEK
+---------------------------------------------------------------------------------------------------------------------------

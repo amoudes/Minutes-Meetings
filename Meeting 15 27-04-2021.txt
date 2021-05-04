@@ -90,15 +90,17 @@ TASK THIS WEEK
 Limitation experiments
  - Continue running simulations on the MM code
  - Refine post processing. Include kinematic plots
- - Perform mesh convergence study on DNS and MM RVE.
+ DONE Perform mesh convergence study on DNS and MM RVE.
  - For comparison run limitation experiments on FE2 scripts
-  - Adapt FE2 script s.t. it allows variable RVEs
+  DONE Adapt FE2 script s.t. it allows variable RVEs
  - Implement variable hole size in an RVE
  - Implement  and run non perfect hole allignment in RVE and DNS
+ - Determine critical buckling force.
 
 Meeting Ole Sigmund
- - Prepare presentation before Friday.
- - 
+ SLIDES DONE - Prepare presentation before Friday.
+ NOT DONE    - Practice
+   
 
 
 
