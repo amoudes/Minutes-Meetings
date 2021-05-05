@@ -39,8 +39,63 @@ Points of discussion
 NOTES MEETING
 ---------------------------------------------------------------------------------------------------------------------------
 
+ - reconstruct 4x4 MM and FE2. Run it both on original code and altered code. and see what the problem is with 
+ - tasks next week check numerical errors, soon failure, peek in DNS
+ - change in microstructures
+  - different hole size in RVE
+  - periodicity infinite horizontally specimen from now
+  - square holes (allows orientation)
+ - Change presentation according to comments
+
 SUMMARY MEETING
 ---------------------------------------------------------------------------------------------------------------------------
 
+ - Mesh convergence study on MM and DNS is helpful. hmax of 0.167 is indeed a suitable maximum mesh size parameter. A few
+   Comments about the mesh convergence study:
+   - In the MM and DNS comparison plot you can distinguish two types of errors: 1) discretization error - This is due to 
+     the discretization of the mesh. The results should flatten out upon mesh refinement. 2) DBC edge error / error due to 
+     size effects - this is due to the fact the DBC introduce some artificial stiffness in the specimen. When more holes 
+     are introduced in the macro domain the error between DNS and MM should decrease.
+   - hmax is not perfectly reflected back in the mesh but is a good mesh size tuning parameter nontheless.
+ - The results of the D2 sweep of the MM, FE2 and DNS is done okay. Some remarks:
+   - Kinematically it appears that MM is much more accurate than the FE2. The MM is much more capable to capture the
+     DNS deformation.
+   - In terms of error the opposite effect is seen when regarding the results of the a constant hole diameter throughout
+     the sample. The error for FE2 is smaller then for MM which actually should not be the case considering previous
+     research. I should test MM and FE2 on the same 2x2 square stacking of holes on my altered code and original code to
+     see where the problem lies. If I can not find the problem I should contact Ondrej.
+   - There are two numerical issues I should investigate
+     1) A bump in the linear DNS simulation for D2 ~ 0.6 - F.e. use Paraview to check deformation evolution
+     2) The small-big-small cases of the MM simulations do not completely finish. I should check the log for errors/warnings.
+        I can play with the time discretization steps and the bifurcation pertubation size (either too big or not enough steps).
+   - When the issues are resolved I can go and run the simulations in a smaller region of interest. Kinematically speaking,
+     the region lies is about [0.78 - 0.85], though this region does give larger errors than smaller regions.
+   - Logical next step is to only consider the horizontally infinite strip. a 2x12 strip can be used to prevent global
+     which requires the same computational power both for DNS, FE2 and MM.
+   - Also I can start to think about other variable features. (square holes, variable hole size within RVE).
+   - Non-perfect allingment of holes we consider not necessary and difficult to test. With a sufficient large offset we would
+     go to the hexagonal stacking which is more complicated (3 patterning modes instead of 1). Therefore we avoid it.
+ - Overall structure of the presentation is okay. Some remarks:
+   - In motivation mention the coupled buckling optimization earlier. This is clearly a spearpoint of the project and should
+     be clear in the beginning.
+   - Structure after that is fine. Explanation of the MM is okay and maybe emphasize again on the multi-scale buckling. 
+   - The project structure could be presented more clearly. Instead of a linear path I can use a V-shaped path from computational
+     homogenization to parametric design or topology optimization.
+   - Challanges listed currently only exist for the topology optimization and should therefore move to that section.
+   - The goal of the parametric desing is to perform multi-scale topology optimization using the MM scheme (not TO). Verifies
+     the possibility of the redistribution of the period.
+   - TO part of the project is still vague. Present the general idea of this part that follows from the challange at hand
+     and also mention that what we are actually planning in this part is still up for debate.
+
 TASK THIS WEEK
 ---------------------------------------------------------------------------------------------------------------------------
+
+ - Investigate why the FE2 gives smaller error than MM
+ - Resolve numerical issues:
+   - small-big-small errors
+   - bump in linear DNS simulation
+ - Implement and run simulations using for new variables
+   - Square holes
+   - Variable hole size (circular / square)
+ - Change presentation according to comments
+ - Determine critical buckling load
