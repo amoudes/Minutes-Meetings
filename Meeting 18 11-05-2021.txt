@@ -1,0 +1,43 @@
+Meeting 18 11-05-2021
+
+Attending: 
+ Thijs Oudes
+ Ondrej Rokos
+
+DISCUSSION
+---------------------------------------------------------------------------------------------------------------------------
+
+Tasks last week:
+ - Resolve numerical issues:
+  - NOT DONE	- small-big-small errors - Will not focus on this problem since simulations will be done on infinite 
+		  strip from now on. If it shows up in the infinite strip I will then try to answer it.
+  - DONE 	- bump in linear DNS simulation - Reason is transition from local to global buckling (snap)
+
+ DONE		- Investigate why the FE2 gives smaller error than MM
+   		  Not sure what the problem is yet. Simulations using the same dimensions either.
+
+ NOT DONE	- Adapt codes for infinite strip:
+                 - Adapt DNS - change solver type to Newton
+		 - FE2       - include macroscopic bifurcation analysis
+                 - MM        - change solver type to Newton + include macroscopic bifurcation analysis
+
+ 		 Q - RUN_DNS_compression - line 39 - What is the function of 'TargetStretch'?
+
+		 Q - solve_rC - What is B?
+
+		 Q - solve_rC - Why is the gradient computed using grad_hess and not using grad_hess_c?
+                	       Probably due to extended Hessian and Gradient (EH & EG).
+ 
+ 		 Q - get_rve_data - What is the difference between Cpbc and Ccon?
+                	          - Tying matrix: What are the components IC, JC and SC?
+
+ NOT DONE	- Analyse infinite strip
+ 		 - Implement and run simulations using for new variables
+   		 - Square holes
+   		 - Variable hole size (circular / square)
+
+ DONE		- Change presentation according to comments
+ 
+ NOT DONE	- Determine critical buckling load
+
+

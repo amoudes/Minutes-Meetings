@@ -1,0 +1,19 @@
+Notes Meeting 17 07-05-2021
+
+Attending:
+ Thijs Oudes
+ Ondrej Rokos
+
+DISCUSSION
+---------------------------------------------------------------------------------------------------------------------------
+Goal meeting: discuss 
+
+- paraview export MM
+- tying conditions FE2 / DNS
+- What code to run for infinite strip MM
+- Situation element types MM and FE2 (errors).
+
+- Infinite compression
+ adapt DNS code - change solver type to Newton
+ adapt MM  code 
+ adapt FE2 code - include macroscopic bifurcation analysis
