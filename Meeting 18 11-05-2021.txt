@@ -14,7 +14,7 @@ Tasks last week:
   - DONE 	- bump in linear DNS simulation - Reason is transition from local to global buckling (snap)
 
  DONE		- Investigate why the FE2 gives smaller error than MM
-   		  Not sure what the problem is yet. Simulations using the same dimensions either.
+   		  Not sure what the problem is yet, larger dimensions MM Newton algorithm does not converge.
 
  NOT DONE	- Adapt codes for infinite strip:
                  - Adapt DNS - change solver type to Newton
@@ -30,6 +30,8 @@ Tasks last week:
  
  		 Q - get_rve_data - What is the difference between Cpbc and Ccon?
                 	          - Tying matrix: What are the components IC, JC and SC?
+
+		 Q - 
 
  NOT DONE	- Analyse infinite strip
  		 - Implement and run simulations using for new variables
