@@ -31,7 +31,7 @@ Tasks last week:
  		 Q - get_rve_data - What is the difference between Cpbc and Ccon?
                 	          - Tying matrix: What are the components IC, JC and SC?
 
-		 Q - 
+		 Q - How is 
 
  NOT DONE	- Analyse infinite strip
  		 - Implement and run simulations using for new variables
@@ -41,5 +41,69 @@ Tasks last week:
  DONE		- Change presentation according to comments
  
  NOT DONE	- Determine critical buckling load
+
+
+NOTES MEETING
+---------------------------------------------------------------------------------------------------------------------------
+ 
+-  implementation PBC:
+   1) Lagrange multiplierse: Cu = B
+   2) Condensation:
+   3) Direct assembly of stiffness matrix (not discussed in detail).
+ - In DNS change to condensation method, for FE2 and MM.
+   For MM and FE2 problem is more difficult and
+
+
+SUMMARY MEETING
+---------------------------------------------------------------------------------------------------------------------------
+
+Smaller FE2 error than MM:
+ - From the results of the FE2 and MM simulations we can conclude that there are no bugs/problems with the MM code. The
+   larger MM in the 2x3 case can be explained by the discretization. Although using similar defailt input values as in the 
+   paper (40x40) did not result in converged MM simulations, the FE2 error was significantly larger than the MM. 
+    - In the following, before running the D2 sweep on the infinite strip, I will do a similar analysis to rule out any
+      errors problems beforehand.
+    - The MM error between Q8 (9.07%) and T9 (8.71%) elements is very small. To have a computationally more favourable
+      simulation it is wise to opt for the faster elements with less integration points, this being the Q8 elements.
+
+Adapt code for inifinite strip:
+ - There are various options of implementing PBC. We discussed two methods in detail and one briefly.
+   1) Using Lagrange multiplieres: Here you list all displacements in the C matrix and equate them to zero (rhs, B = 0).
+      See the meeting notes for more detail. This method makes use of an extended Hessian (EH) matrix and Gradient (EG)
+      vector. Currently 'solve_rC' makes use of this method. 
+      The difficulty of this problem is the compuation of eigenvalues of the stiffness matrix (K), since you minimize 
+      the energy and maximize with respect to Lagrange multipliers you have a min-max problem (saddlepoint) and therefore 
+      you will always find negative eigenavalues. Bifurcation analysis using this method therefore requires a different 
+      approach than is currently implemented. It is possible using null-space projection which is not currently implemented 
+      in the code. Ondrej will do this later today.
+   2) Condensation. Displacements are separated into two; one part describes dependent nodes. They are linked to the 
+      independent nodes on the other side of the vertical boundary. The benefit of this method is that by condensation linked
+      information is stored in the C matrix. When computing the stiffness matrix later therefore is easier since you are only
+      considering a minimzation problem (as opposed to a min/max problem with Lagrange multipliers), therefore minDiag function
+      works nicely here.
+   3) Direct assembly of the stiffness matrix. Here you make use of the linked nodes and assign a spring like stiffness around
+      the nodes and penalize displacements. More info is not required since we will focuss on methods 1) or 2).
+ - For proper functionality of the code it is important to stay consistent in the approach we take. Solver and determination
+   of the Hessian all rely on the method chosen.
+ - We changed the condensation approach in the DNS to the Lagrange approach to stay consistent with the 'solve_rC' solver.
+   The solver seemed to work fine. Problems however arose in the macroscopic bifurcation analysis. The current Hessian
+   construction does not enforce the periodicity constraints therefore it is not able to find a correct link up between the two
+   vertical boundaries. It is remains stuck in the halving-time-step loop. I should replace 'grad_hess' with 'grad_hess_c'
+   that uses a condensed matrix.
+ - For the MM and FE2 the problem is a bit more complex. They both use Lagrange multipliers for tying PBC and therefore I
+   should use the null-space projection method that Ondrej will Implement soon.
+
+TASKS THIS WEEK
+---------------------------------------------------------------------------------------------------------------------------
+
+ - Adapt DNS code for the inifinite strip; Implement condensation method
+ - Adapt the homogenization methods (FE2, MM) for the infinite strip; use Lagrange multipliers with null-space projection
+ - Perform analysis on macroscopic mesh:
+   - test for element size
+   - test for element type
+   - check for error compared to DNS
+ - Run analysis. Use:
+   - Variable hole size
+   - Square hole size - Relevent since TO will likely result in horizontal and vertical struts
 
 
