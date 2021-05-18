@@ -24,7 +24,7 @@ Tasks last week:
 		
 		Q - solve_rC_micromorphic_Lag.m does not converge. Not sure what the problem is.
 
- 		Periodic FE2 both Lagrange and condensation are much faster than non-periodic. Why?
+ 		Q - Periodic FE2 both Lagrange and condensation are much faster than non-periodic. Why?
 
 
 	        - Implement variable hole size in DNS, FE2 and MM
@@ -37,9 +37,9 @@ Tasks last week:
                  - test for element type
                  - check for error compared to DNS
  
-NOT DONE        - Run analysis. Use:
-                 - Variable hole size
-                 - Square hole size - Relevent since TO will likely result in horizontal and vertical struts
+ NOT DONE        - Run analysis. Use:
+                  - Variable hole size
+                  - Square hole size - Relevent since TO will likely result in horizontal and vertical struts
 
 NOTES MEETING
 ---------------------------------------------------------------------------------------------------------------------------
