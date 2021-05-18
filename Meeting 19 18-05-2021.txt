@@ -1,0 +1,55 @@
+Meeting 19 18-05-2021
+
+Attending: 
+ Thijs Oudes
+ Ondrej Rokos
+
+DISCUSSION
+---------------------------------------------------------------------------------------------------------------------------------
+
+Tasks last week:
+ DONE	 	- Adapt DNS code for the inifinite strip; Implement condensation method
+      
+                - Adapt the homogenization methods (FE2, MM) for the infinite strip; use Lagrange multipliers with null-space projection
+ DONE            - FE2
+ NOT DONE        - MM
+
+		Q - RUN_micromorphic_2d_compression.m - Discuss tying constraints. 
+				       		      
+
+		Q - solve_rC_micromorphic_Lag.m - line 20 - What is different in the computation of the Hessian and forces in 
+							    Niter = 1 and what should be included in Niter ~= 1?
+				 		- line 42 - What is the lambda parameter and what does is it do?
+				 		- General: Check entire code of constraint solver.
+		
+		Q - solve_rC_micromorphic_Lag.m does not converge. Not sure what the problem is.
+
+ 		Periodic FE2 both Lagrange and condensation are much faster than non-periodic. Why?
+
+
+	        - Implement variable hole size in DNS, FE2 and MM
+ DONE 		 - DNS
+ DONE 		 - FE2
+ NOT DONE        - MM
+
+ NOT DONE       - Perform analysis on macroscopic mesh:
+                 - test for element size
+                 - test for element type
+                 - check for error compared to DNS
+ 
+NOT DONE        - Run analysis. Use:
+                 - Variable hole size
+                 - Square hole size - Relevent since TO will likely result in horizontal and vertical struts
+
+NOTES MEETING
+---------------------------------------------------------------------------------------------------------------------------
+
+
+
+SUMMARY MEETING
+---------------------------------------------------------------------------------------------------------------------------
+
+
+TASKS THIS WEEK
+---------------------------------------------------------------------------------------------------------------------------
+

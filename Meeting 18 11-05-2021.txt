@@ -96,8 +96,14 @@ Adapt code for inifinite strip:
 TASKS THIS WEEK
 ---------------------------------------------------------------------------------------------------------------------------
 
- - Adapt DNS code for the inifinite strip; Implement condensation method
+ DONE Adapt DNS code for the inifinite strip; Implement condensation method
  - Adapt the homogenization methods (FE2, MM) for the infinite strip; use Lagrange multipliers with null-space projection
+  DONE FE2
+  - MM
+ - Implement variable hole size in DNS, FE2 and MM
+  DONE DNS
+  DONE FE2
+  - MM
  - Perform analysis on macroscopic mesh:
    - test for element size
    - test for element type
