@@ -43,13 +43,54 @@ Tasks last week:
 
 NOTES MEETING
 ---------------------------------------------------------------------------------------------------------------------------
-
+ 
+- boundary conditions 
+- Q2 before bifurcation
 
 
 SUMMARY MEETING
 ---------------------------------------------------------------------------------------------------------------------------
 
+ - Implementation of PBC on the DNS and FE2 appears to have gone well. No critical points or points of improvement for the
+   code.
+ - The quick results I did last minute showed what we expect. 
+    - DNS for b-s-b does show global buckling but this is with a steep gradient. Probably will be less if the gradient is 
+      smaller.
+    - FE2 with varying hole size shows no global buckling. Compressiveness and lack off shows that varying hole size is
+      affecting the simulation.
+    - MM have not been done yet since I had questions about setting up the solver.
+ - General comments about the micromorphic code:
+    - Structure seems fine. Bifurcation analysis should work.
+    - I should also include DBC on the vi fields. Originally it was periodic in x and y, now only in x so vi field should
+      be constrained in y.
+    - I can avoid using the LDT decomposition of the Hessian. Instead direcly use Matlab's backslash operator to solve for
+      displacements.
+    - Apply the Q transformation on the eigenvector after K1t decomposition.
+ - In the micromorphic solver I included a force part in the extended gradient for each iteration. This should only be done
+   in the first Newton iteration. In the first iteration you only apply 'dtDBC' (the fraction of the full DBC) to make sure
+   you do not completely snap over elements in the first Newton iteration. In later iterations this is okay since the
+   elements compress equally over the domain and tDBC + dtDBC can be used instead. For this reason only include the force
+   in the first Newton iteration in the EG.
+ - Tying constraints (MC) seems okay. Implementation seems okay too.
+ - Lambda in the solver contains all the Lagrange multipliers. Lambda multiplied with displacements yields a force vector.
+   Hence Lambda are energies?.
+
 
 TASKS THIS WEEK
 ---------------------------------------------------------------------------------------------------------------------------
+
+ - Finish implementation infinite strip simulation MM.
+ DONE Implement varying RVEs in MM.
+ - Mesh analysis on:
+  DONE DNS
+  DONE FE2
+     - MM
+ - Run analyses:
+   - Variable hole size
+ DONE	- DNS
+ DONE	- FE2
+ 	- MM
+   - Square holes
+   - (Variable hole size within RVE.)
+ - Determine critical buckling force
 

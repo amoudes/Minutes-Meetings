@@ -1,0 +1,45 @@
+Meeting 20 25-05-2021
+
+Attending:
+ Thijs Oudes
+ Ondrej Rokos 
+
+DISCUSSION
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Tasks last week:
+ NOT DONE		 - Finish implementation infinite strip simulation.
+			  Q - solve_rC_micromorphic_Lag.m - If LDP decomposition can be avoided. How then compute negative diagonal?
+
+			  Q - still issues with the solver. Discuss solver settings.
+
+ DONE 			 - Implement varying RVEs in MM.
+ 
+			 - Mesh analysis on:
+			  C - Discuss results DNS & FE2.
+ DONE 			   - DNS
+ DONE 			   - FE2
+ NOT DONE		   - MM
+
+			 - Run analyses:
+   			  - Variable hole size
+			 C - Discuss results DNS & FE2.
+ DONE			   - DNS
+ DONE			   - FE2
+ NOT DONE		   - MM
+ NOT DONE		  - Square holes
+			 C - Show results DNS.
+ NOT DONE		  - (Variable hole size within RVE.)
+ 
+ NOT DONE		 - Determine critical buckling force
+
+NOTES MEETING
+---------------------------------------------------------------------------------------------------------------------------
+ 
+
+SUMMARY MEETING
+---------------------------------------------------------------------------------------------------------------------------
+
+TASKS THIS WEEK
+---------------------------------------------------------------------------------------------------------------------------
+
