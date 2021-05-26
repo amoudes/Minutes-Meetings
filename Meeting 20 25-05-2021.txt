@@ -1,4 +1,5 @@
 Meeting 20 25-05-2021
+(Q = question, C = comment)
 
 Attending:
  Thijs Oudes
@@ -34,12 +35,81 @@ Tasks last week:
  NOT DONE		 - Determine critical buckling force
 
 NOTES MEETING
----------------------------------------------------------------------------------------------------------------------------
- 
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - to do run sims MM
+ - run square hole simulations
+
 
 SUMMARY MEETING
----------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------- 
+
+ - Solver issues MM:
+  - Upon closer inspection the solver problems most likely originate in the Cu - B = 0 part. It appears that the displacements are not updated
+    each iteration. Therefore C = const and u = const and so the aforementioned equation can never be satisfied. Derivation of the system of 
+    equations showed why Cu = B is important and why u needs to be updated with each iteration.
+  - Moving the update displacement term inside the loop should solve the problem. During the meeting we ran a quick M2x2 simulation and it 
+    appeared to run well. It was able to run past the bifurcation analysis which it had not been doing before.
+  - Should there still be problems with the simulation an approach I could take is to run the simulation until the bifurcation point on the
+    cluster, save the workspace and load it locally and see what the bifurcation is doing after. Disect where necessary. After all using the
+    this solver and macroscopic periodicity should work and the solver should be capable of solving it.
+  - The perturbation study showed that you have to find an optimal perturbation 'kick' size. Too big and you overshoot the minimum and too
+    small and you will not kick the solution into a stable configuration.
+  - Periodicity checks still need to be performed on the v fields. On first glance they appear to be okay.
+  - When bifurcation on the v1 field is triggered this field should be non-zero. v0x & v0y can be (virtually) zero.
+  - The S-shape deformation would not be expected since it is not the lowes deformation be mode (it is the second). It could however be
+    possible. We should see what the slender periodic specimens will do before drawing conclusion. Horizontal deformations is small though
+    compared to overal specimen size.
+ - Mesh convergence study:
+  - The DNS simulation showed decent flattening of the final stress and energy levels at CellSize/8 -> Henceforth I should use this value
+    (I already came to the same conclusion).
+  - FE2 did not show any dependency on the mesh size. Which makes sense since we are essentially performing the same homogeneous deformation
+    on each element. This is only valid when having a constant RVE in the entire macroscopic specimen. For varying RVEs there should be a 
+    dependency on the macroscopic mesh.
+  - For now FE2 with a 2x8 Q16 element configuration should be fine.
+  - The MM mesh convergence study should still be performed.
+ - Variable hole size study:
+  - DNS; The DNS simulations showed global buckling for too large gradients. The region of interest is the part where the deformation pattern is 
+    able to fully develop throughout the specimen.
+  - DNS; In the P22 and energy plots and kicks and bumps and softening are explained by the shift towards global buckling.
+  - DNs; In the sbs case for large gradients a secondary bifurcation point is introduced. The first is due to the onset of the patterning mode
+    the second point is global buckling.
+  - DNS; Some simulations were not able to completely finish. I could evaluate deformation at earlier timepoint to still have comparable
+    results. The simulations that were not able to finish lie in the region in which we are not interested so not too important to make them
+    work.
+  - FE2; Deformation is very localized. Only few elements show very soft behaviour. Due to lack of connection between cells only a small band
+    of cells are affected. In the MM we expect the deformation to be more gradual and evenly spread through the specimen.
+  - FE2; For the large gradients simulations are too not able to fully finish. This is not a problem since it can be evaluated at an earlier
+    time point.
+  - Comp; FE2 shows much softer behaviour than DNS. Since holes there is a form of communication between holes/cells in the DNS, this
+    constraint can be regared as an additional stiffness. FE2 lacks any form of communication thus the softer elements make sense.
+    The FE2 error also reflects this observation. All FE2 values are (much) lower than the MM ones.
+ - Square holes:
+  - I showed some early results and they look good.
+  - It makes sense to have rectangular inclusions instead of perfect squares. By doing so we would be able to increase and decrease ligament
+    thickness.
+  - Orientation seems good.
+ - In the following include a quadratic hole size gradient. Periodic might not be relevant in the following.
 
 TASKS THIS WEEK
----------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - Test MM simulations - find good solver settings
+ - Mesh convergence study MM
+ - Coarse MM D2 study
+ - Fine D2 study:
+  - DNS
+  - FE2
+  - MM
+ - Rectangular holes DNS, FE2, MM
+ - Rectangular hole simulations
+  - DNS
+  - FE2
+  - MM
+
+
+
+
+
+
 
