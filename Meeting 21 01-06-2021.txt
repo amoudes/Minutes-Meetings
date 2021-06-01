@@ -1,0 +1,32 @@
+Meeting 21 01-06-2021
+(Q = question, C = comment)
+
+Attending:
+ Thijs Oudes
+ Ondrej Rokos
+
+DISCUSSION
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Tasks last week:
+ DONE 		- Test MM simulations - find good solver settings
+ 
+ DONE		- Mesh convergence study MM
+		  C - This changed to a size factor study. Size factor of ~4 seems to avoid S-shape for constant hole size
+
+ DONE		- Coarse MM D2 study
+		  C - Discuss results
+		  Q - Elements at the edge are compressed much more than center elements. Even so far that is causes mesh distortion.
+		  Q - A single patterning mode phi for each RVE gives problems since discretization for meshes with different hole sizes is 
+                      gives different amount of nodes and elements. My current approach is to constuct a fine "master RVE mesh" using a large
+                      hole diameter and use it to find interpolated values for RVEs with different hole sizes/shapes.
+
+ NOT DONE	- Fine D2 study:
+  		 - DNS
+  		 - FE2
+  		 - MM
+
+ NOT DONE	- Rectangular holes DNS, FE2, MM
+
+
+		  C - Discuss general progress project (planning, where we should be by now, ...)
