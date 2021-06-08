@@ -30,3 +30,50 @@ Tasks last week:
 
 
 		  C - Discuss general progress project (planning, where we should be by now, ...)
+
+NOTES MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+SUMMARY MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - The problem with the S-shape is due to the small scale ratio. In situations where the S-shape occurred the macroscopic domain essentially
+   consisted out of four holes. Since size effects do play a role in MM scheme this is what happened. With increasing domain size and 
+   constant hole size the S-hape quickly became non prominent. Though judging from the interpolation plots (v0x, v0y, v1) it seems that v0x 
+   still would like to deform in to an S-shape upon micromorphic bifurcation, when secondary buckling instigates it hopefully would like to 
+   deform in the longenst possible wavelength.
+ - A scale ratio of four seems to be fine and within the computational realms of the DNS. I should make sure to use a smaller compression 
+   <10% when using a larger scale ratio to prevent snapping through elements/holes. (The DNS had problems solving 10% compression when scale
+   ratio was 4).
+ - In the size factor study we see that for large scale ratios wave like patterns pop up in the v1 field. This is attributed to the large 
+   step size from deformation to no deformation at the edges. To compensate for this rapid jump in v1 values (using quadratic elements) 
+   negative countervalues needs to exist. A parallel can be drawn with a sharp cut-off in a Fourier series. Here we also see oscillations 
+   pop up at the edges. This is not something to worry about. Simply using finer macroscopic discretization should solve it. However since 
+   we will not be using such a large scale ratio, the effects should be negligebly small.
+ - The comment made in the email about an individual patterning mode phi for each RVE was actually implemented correctly. The comment was
+   that it seemed like there were multiple patterning modes acting on one macroscopic domain. This was actually not the case. In fact the 
+   patterning mode is described using one analytical expression (Fourier series) which acts on the entire RVE-domain. Since it is an
+   analytical expression it can act on different RVEs. There is no need to apply an interpolated approach such as the one I implemented 
+   after I received the comment. I can therefore change it back to how it was before which should not be a problem.
+ - Variable hole size for the MM gave some mixed results. The v1 fields look like what we would expect from the MM scheme. They are activated
+   in the correct areas where the holes are the largest (more compliant). The deformation of the mesh on the other hand is less accurate.
+   Elements at the edge compress much more then elements at the center. Deformation is less equally distributed throughout the mesh than it
+   should be. It is not clear why this is so.
+   For example, the small-big-small elements show much deformation at the mesh boundaries while the most compliant elements are located at the
+   center.
+   Upon close inspection, pre-bifurcation (so in the FE2 regime) deformation is not equally distributed while it should be. This is a problem 
+   as the MM therefore does not give reliable results.
+  - To locate the issue I should retrace the steps I took and see if the problem pops up in previous versions of the code.
+  - I should also take a loot at the RVE meshes at the element macroscopic boundaries to check for any distortions or ill shaped elements.
+  - If I do not find the solution before Friday I should contact Ondrej so he can have a look.
+
+TASKS THIS WEEK
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - Identify and solve the problem with the element macroscopic element distortions.
+ DONE - Revert changes in patterning modes RVE.
+ - Fine D2 study:
+  - DNS
+  - FE2
+  - MM
+ - Rectangular holes DNS, FE2, MM

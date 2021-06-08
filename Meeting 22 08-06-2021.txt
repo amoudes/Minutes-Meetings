@@ -1,0 +1,33 @@
+Meeting 22 08-06-2021
+ (Q = question, C = comment)
+
+Attending:
+ Thijs Oudes
+ Ondrej Rokos
+
+DISCUSSION
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ DONE		- Identify and solve the problem with the element macroscopic element distortions.
+ 
+ DONE 		- Revert changes in patterning modes RVE.
+ 
+ DONE		- Coarse D2 study:
+  		 C - Discuss results
+		   - Emphasis on v1 plots MM - lin
+
+ NOT DONE	- Rectangular holes DNS, FE2, MM
+ DONE		 - MM
+
+NOTES MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+SUMMARY MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+TASKS THIS WEEK
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
