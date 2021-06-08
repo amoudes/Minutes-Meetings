@@ -14,7 +14,7 @@ DISCUSSION
  
  DONE		- Coarse D2 study:
   		 C - Discuss results
-		   - Emphasis on v1 plots MM - lin
+                 C - Discuss current compression ratio
 
  NOT DONE	- Rectangular holes DNS, FE2, MM
  DONE		 - MM
