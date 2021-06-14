@@ -22,11 +22,46 @@ DISCUSSION
 NOTES MEETING
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
+ - maybe linear hole scaling inside RVE
+ - Check deformation mode FE2 square holes
+ - inclanation of ligaments inside RVE
+ - start off with simple geometry 
+ - vary scale ratio RVE
+ - Pattering dependencie on horizontal periodicity
+  - test odd and even amount of periodic copies and see if there is a difference between deformations
+ - same kind of patterning mode flowing throughout the domain.
+ - start with DNS then go to FE2 and MM.
+
+
 SUMMARY MEETING
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
+ - Discussion results last week:
+  - It turns out the problem with the faulty compression of elements was due to a typo in the application of the DBC. I forgot to include a 
+    d in the reconstruction of the constraint nodes. After correction the model now works as expected and nicely.
+  - The error of the MM scheme is very small for all cases using 5% compression and scale ratio of 4 except for a few cases. Big-small-big 
+    simulations where global buckling occured deviated from the DNS. However the MM is perfectly able to accurately capture micromorphic
+    bucklinkg. It would be interesting to test a slightly bigger compression ratio to trigger global buckling in more cases and sooner.
+ - With the model working we can start to think about exploring the possible design space we have at hand. We discussed several possibilities
+  - Rectangular holes are a good option. First of all we are interested in the deformation mode of RVEs using rectangular holes with a
+    default orientation. This can be tested using FE2 and checking whether there is a specific pattern to destinguish in the deformed RVE.
+  - Changing the orientation of ligaments of RVEs using rectangular holes. The goals would be to see the specific patterning mode flow
+    through the deformed mesh. We would start out with the DNS to check whether it is possible at all and then later apply the same
+    microstructure with the MM to hopefully match the behaviour we see in the DNS.
+  - The approach of this method is to start out with DNS and very simple geometry and check whether it is possible to indeed get some
+    patterning mode to flow through the structure. Orientation and offset of holes are the tools at hand. How to construct this is somewhat
+    tricky and can take some time.
+  - Another possibility would be to change the scale ratio depending on the location of the RVE in the macroscopic mesh.
+  - A third possi
+  - Since we are testing on a semi-infinite strip periodicity should be taken into account. The preferred deformed configuration is the one 
+    with the least energy. I should make horizontal copies and evaluate the normalized energy of each simulation. The one with the least
+    energy would be the preferred state.
+
 TASKS THIS WEEK
 ---------------------------------------------------------------------------------------------------------------------------------------------
+ 
+ - Explore design space using rectungular holes and circular holes
+ - 
 
 
 
