@@ -1,0 +1,41 @@
+Meeting 23 15-06-2021
+ (Q = question, C = comment)
+
+Attending:
+ Thijs Oudes
+ Ondrej Rokos
+
+DISCUSSION
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ Explore design space using rectangular and circular holes.
+ 
+ DONE	- Construct DNS file with arbitrary vertical ligament shape.
+	  C - Discuss mesh shapes.
+	  Q - Are results in line with expectations.
+	  Q - How to implement similar meshes in MM and FE2.
+	  Q - Need more explanation on testing with available design space. (e.g. sketches)
+
+ DONE	- Initial study width, height square holes.
+	  C - Have not analyzed results yet.
+ 
+ DONE	- Deformation mode RVE with square holes.
+	  C - Have not analyzed results in detail yet.
+
+ NOT DONE	- Study on rectangular hole orientation.
+
+ NOT DONE	- Study on rectangular holes in MM.
+
+ NOT DONE	- Study patterns vertical ligament shape MM.
+
+ - Meeting Ron
+ - Vacation June 26th - July 25th
+
+NOTES MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+SUMMARY MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+TASKS THIS WEEK
+---------------------------------------------------------------------------------------------------------------------------------------------
