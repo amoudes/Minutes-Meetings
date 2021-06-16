@@ -34,8 +34,57 @@ DISCUSSION
 NOTES MEETING
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
+ - Run DNS try find some patterning mode where patterning is in competition with FE2
+ - Run L1 L2 on the MM. (just to see what it does).
+ - Patterning mode analysis on the RVE. include them in MM and maybe include 3 modes.
+
+ - Shear in two possible places, (i) patterning mode option, (ii) deformation gradient.
+
 SUMMARY MEETING
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
+ - Shown results of the microstructures of the DNS are in line with what we discussed last week. I had a questions about orientation of the
+   rectangular holes and what was correct. Right now I keep the horizontal edge of the void horizontal and tilt the vertical edges to adjust
+   to the predetermined shape. This means that we are able to introduce another variable to the meshes being (i) the angle for linear cases,
+   and (ii) period, max deviation and phase for the periodic cases.
+ - We also discussed the results of the height and width study of the rectangular holes without angles/orientation. What Ondrej did not
+   expect was that no patterning mode could be distinguised in the microstructure. Upon bifurcation the system buckled mostly globally.
+ - The lack of any deformation patterns in the microstructure (apart from shearing pattern) will make it difficult (if not impossible) to 
+   capture this using the MM scheme since holes are able to communicate with each other via the patterning mode fields (vi). Since we do not
+   observe any patterning in the current DNS deformations the vi fields will most likely be ~0 and thus the MM will be limited to FE2.
+ - The shearing modes suggest that the second order FE2 is required to capture the shearing effects. This would be a big change to the MM 
+   scheme as it is currently and might lie beyond the scope of this project.
+ - Intuitively you could introduce a shearing mode as a patterning mode into the MM scheme. The problem however is that (1) shear then can
+   originate from the patterning mode AND the deformation gradient. Thus creating a non-uniqueness in your solution. (2) Patterning modes 
+   are defined using four control nodes that are stationary upon applying the patterning mode deformation. In shear some of these points are
+   not stationary. A solution for (2) would be to introduce second order FE2, but as already mentioned that would drastically change the code,
+   take quite some time to implement and be quite difficult.
+ - Other observations:
+   - For wide horizontal struts there is little communication between vertical elements. Hence buckling between rows is random. When
+     horizontal strut thickness decreases struts are buckling between rows is affected by each other and longest buckling period is most
+     common buckling shape.
+   - For thick vertical struts the same principle applies. No deformation communication between columns. When decreasing strut thickness this
+     becomes much more dominant.
+   - Small holes render a too stiff specimen to buckle at 5% compression using current input settings.
+ - Thus what we would like to see is some pattering in the microstructure in the DNS simulations. If we see a pattern we can designa a
+   pattering mode and thus we can the MM scheme. Using the current orientation of the holes we do not see patterning. One way to find one is
+   to orient the holes or revert back to circular holes that have shown that a patterning mode does occur when compressing.
+ - How to implement an oriented vertical ligament in the MM scheme was another topic for discussion. One what to do this was to apply some
+   rotation matrix to the RVE (which it already does basically) and then compute the deformations etc. Another approach would be to change the
+   RVE shape such that it allows slanted vertical struts. We do not have to be limited to square RVEs. What should be guaranteed is periodicity
+   between RVEs.
+ - The deformation mode we saw that occured for a rectangular hole in FE2 lied was a random buckling direction. The longest possible wavelength 
+   corresponds to the longest buckling mode in an RVE and not of the macrostructure since there is not connection between individual RVEs.
+ - Another approach for finding a pattern would be to perform an eigenvalue test using the RVE_F function already implemented in the develop
+   branch. This is also the approach taken to find the patterning mode of the square stacking of holes. Similar approach can be taken to find
+   a patterning mode for rectangular holes (oriented, slanted, etc.).
+
 TASKS THIS WEEK
 ---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - Run width & height (L1,L2) simulations on MM scheme
+  (see what it does and test whether the MM is able to pick up the deformation mode of the RVEs - probably not though)
+
+ - RUN DNS for various hole shapes, ligament orientations, L1-L2 combinations to see whether a pattern can be distinguished
+
+ - Perform patterning mode analysis on the RVE. If possible deformation modes are found include them in the MM scheme (3 modes or so).
