@@ -1,0 +1,28 @@
+Meeting 24 22-06-2021
+ (Q = question, C = comment)
+
+Attending: 
+ Thijs Oudes
+ Ondrej Rokos
+
+DISCUSSION
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+DONE		- Run width & height (L1,L2) simulations on MM scheme
+
+IN PROGRESS	- RUN DNS for various hole shapes, ligament orientations, L1-L2 combinations to see whether a pattern can be distinguished
+
+IN PROGRESS	- Perform patterning mode analysis on the RVE. If possible deformation modes are found include them in the MM scheme (3 modes or so).
+
+ - Meeting Ron on Friday
+ - Planning during summer period
+ - Recap/feedback up to now
+
+NOTES MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+SUMMARY MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+TASKS THIS WEEK
+---------------------------------------------------------------------------------------------------------------------------------------------
