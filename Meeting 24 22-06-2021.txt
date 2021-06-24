@@ -20,9 +20,63 @@ IN PROGRESS	- Perform patterning mode analysis on the RVE. If possible deformati
 
 NOTES MEETING
 ---------------------------------------------------------------------------------------------------------------------------------------------
+ 
+ - relax periodicity MM and FE2
+   (see if same problems pop up here as well)
+ - prepare presenation for friday
 
 SUMMARY MEETING
 ---------------------------------------------------------------------------------------------------------------------------------------------
+ 
+ - Meeting started off with discussing the rectangular hole study using FE2 and MM. There was a slight confusion about the RVEs and control
+   points. RVE showed shear behaviour and Ondrej interpreted it as a patterning mode which would not be possible since a patterning mode 
+   contains four fixed control points. This was cleared up relatively quickly.
+ - Results of the rectangular FE2 study showed that the longest buckling period is that of the RVE. No communication between cells exist
+   hence when RVEs are compliant enough they buckle randomly. Compared to DNS there is no real global buckling direction.
+ - There was a minor comment about one of the DNS simulations. It was not able to continue through the bifurcation analysis. In the log file
+   it had something to do with halving the time step. Something to remember for the future and not a pressing issue at the moment.
+ - The rectangular hole study on the MM code showed only FE2 results. The v1 fields were zero in all cases, meaning that the patterning mode
+   has not been triggered for and the MM resorts back to the FE2 simulations.
+ - As for microstructural inspiration: Ondrej sent me a few papers that showed some microstructures that followed from multiscale concurrent
+   topology optimization. They are in line with what we have been implementing thus far and can be a good source of inspiration to test
+   different microstructures than just square holes or circles.
+ - The pattern study on the DNS is performed to see whether any pattern would show up in the DNS that we could describe using an analytical
+   expression or using linearized buckling analaysis. Unfortunately using the angled vertical strut we did not see any patterns in the micro-
+   structure. We had hoped to see a similar buckling pattern like the ciruclar holes but then for the rectangular holes. Unfortunately we did
+   not.
+ - We did see some localization in the bottom row of holes which is not something we should expect. Upon closer inspection it seems that the
+   angle of the vertical struts is a bit different (a bit more compliant) thus creating a weak row in the overall mesh. I should inspect this 
+   in the future.
+ - Periodic tests using half a period and a full period showed that upon buckling the structure follows the shape of the altered mesh. There
+   should be a competition between the global buckling and the higher order prescribed buckling mode but it does not show up in the deformed
+   meshes.
+(- side comment: in the future I should make sure that the figures I use in the presentation are a bit more clear and intuitive. I have had a
+   few times that Ondrej did not understand initially the figures he was looking at.)
+ - The circular hole shapes did show a patterning upond deformation before global buckling. Even as far as that the patterning is able to
+   progress throughout the specimen under a small angle and small amplitude.
+ - Linearized buckling analysis on the RVEs showed that for most cases the RVE would buckle in a buckling pattern and some cases the primary
+   buckling mode would be global buckling.
+ - Including two patterning modes in the MM model also did not give positive v1 and v2 fields. I included two patterning modes based on the
+   linearized buckling analysis on the RVE. The MM was not able to pick up the patterns and the v1 and v2 fields were both zero.
+ - This poses a problem. We would want to have patterning mode in the RVE using square holes such that the MM is able to kick in. Though with
+   the current simulations we do not see any. Also DNS does not show any patterning using square holes.
+ - What we could do is relieve the periodicity of the FE2 and MM. If we see global buckling occuring in these simulations (using square holes)
+   it would mean that the random buckling direction is an artefact of the horizontal infinite specimen. We could then proceed by stating that
+   under semi-infinite conditions the MM and FE2 do not work properly. I should also perform DNS simulations using finite specimens to verify
+   any patterning.
+ - Another approach could be that we would have to include second order continuum in the MM scheme so that bending is incorporated and we could
+   relieve some of the control points. This is not the prefered option as it would lead to a drastically more complicated code and much more
+   work. 
+ - What route to take we will discuss Friday in the meeting with Ron. He might also have some good ideas.
+ - For the meeting with Ron, I should prepare a few slides summarizing what we have been doing up to now.
+
+ - I also asked for some feedback on the progress of the project overall from Ondrej. He is overall pretty happy with how things are going. I
+   show that I am able to work independently and need little help. In terms of progress he is happy as well. The project is not as well
+   defined as other projects and we shape the road we take along the way making it sometimes a bit vague of what we should do. But still he is
+   pretty happy where things are right now.
 
 TASKS THIS WEEK
 ---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - Prepare a few slides summarizing current status and past steps for Ron
+ - Run finite simulations using square holes for DNS, FE2 and MM.
