@@ -20,6 +20,28 @@ NOTES MEETING
 
 SUMMARY MEETING
 ---------------------------------------------------------------------------------------------------------------------------------------------
+ 
+ - Meeting with Ron was quite fruitfull. He had some good ideas on the future of the project.
+ - I think he got the main idea from where we started and how the project had evolved over the last couple of monthts up to now. Slides
+   were quite helpful and provided good insights in what decisions we took. Though the slide with the problems of the FE2 and MM was a bit 
+   confusing.
+ - He quite quickly got the point of where we are at the moment and the decision we would need to make on where to focus on in the project.
+ - We discussed the problems with the competition between global and local buckling and the crossroads we are at the moment.
+ - Options:
+  1) Stick to microstructures that we know work with the micromorphic code and keep on the road to optimization on both scales with respect
+     to buckling. Although this is the original direction we would want to take the project it largely overlooks the problem we have with
+     rectangular holes and we shut the door for a large amount of microstructures.
+  2) Alter the micromorphic code such that it is able to work with these rectangular holes. This is the more difficult option of the two. As
+     we currently do not know how to do so. Ron suggested several good ideas to approach this problem. We know that we see patterning for 
+     circular holes. What we could do is gradually expand circular holes to rectangles by increasing the exponent "p" of x^p + y^p = r^p. 
+     There will be a competition between global and local buckling and by varying the exponent we can see how this transition occurs.
+     Secondly we could set up an simple analytical model that is able to describe the this gradual process of local to global buckling. What
+     this analytical model entails is still a bit vague, but it definitely will provide more insight in why and when what type of buckling 
+     occurs.
+ - Out of the two options the second one is the route we will take. It does mean that we take quite a large intermediate step in the entire
+   thesis (what we didn't anticipate beforehand). But it does give us the most understanding of what we actually see. 
+ - What to do after my holiday:
+  - work on exponent-approach and read on analytical models in the book Ondrej sends me.
 
 TASKS THIS WEEK
 ---------------------------------------------------------------------------------------------------------------------------------------------
