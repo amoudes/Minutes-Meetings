@@ -1,0 +1,95 @@
+Meeting 26 24-08-2021
+
+Attending:
+ Thijs Oudes
+ Ron Peerlings
+
+DISCUSSION
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - Discuss status four weeks ago
+  1) Problem MM code and lack of patterning in microstructure
+
+ Progress last month
+ DONE	 		- Circ-to-square study
+			 C - Discuss conclusions based on DNS simulations. Namely three regions.
+ IN PROGRESS 		- Analytical model
+			 C - Discuss analytical model proposal.
+			 C - Discuss hypothesis for local buckling behaviour
+			 C - 1) Mention portal frames 2) mention stacking of portal frames 3) mention simplification of simple column
+			 Q - How necessary is this analytical model? Would a semi-analytical model also work?
+
+ IN PROGRESS		- Mode study
+			 C - Show results of single mode of ci-to-sq study
+			 C - Show effects of different mode (simple extension)
+			 C - Show effects of combined mode 1 & 2.
+			 Q - Ondrej mentions extending the MM to second order FE2. What do you think Ron?
+
+
+NOTES MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+ 
+ - Hoe vervogmien de ligamenten. buigen de ligamenten? voor het analytisch model maakt
+ - Vergelijk de microstructuren met dezelfe massa (voor netheid)
+
+ - voorstel analytisch model: modeleer een balk met variabele dikte
+
+
+SUMMARY MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - We followed the structure of the slides to structure the meeting. We started off with discussing the deformation of holes with increasingly
+   rounded corners until circular holes are obtained. The first thing Ron adresssed was how the deformation of the square holes actually looks
+   like. From the images it seemd that the vertical ligaments are mostly not bent and that there is no zig-zag (sine-wave) deformation in the
+   horizontal ligaments. However the image in the slides is too vague to draw clear conclusions. I should revisit the results and have a 
+   closer inspection.
+ - He suspected that the stiffness of the microstructure was quite high post-bifurcation. I could check this by comparing with previous results
+   and the paper by Silvia.
+ - If we would tidy things up, instead of keeping the hole size constant we would keep the totall mass constant. Right now we compare micro-
+   structures with different masses which is not a perfectly neat comparison.
+ 
+ Analytical model:
+ - Ron had a few comments about the analytical model. First of all my proposal to model to use portal frames was not in line with what he had
+   in mind. The competition between sway and non-sway structures he understood but the parallel of adding horizontal springs he could not
+   follow. His main point was the physical interpretation of the springs (what do these stiffnesses actually mean?). He did agree with the
+   conclusions I drew about the about the three regimes in the global-to-local buckling transition but the analytical model could be more neat.
+ - He suggested a different approach to modeling an (semi-) anlaytical model. First he suggested a numerical approach in wich we would simulate
+   the holes as ligaments divided into segments with each segment having a different cross section. One could think of it as a cross-shaped
+   hole. The reason for this is that he suspects that the deformation of a repeating unit cell of square holes depends on the relative thickness
+   of each segment with respect to one another. For this assumption is it very important to have a good idea how the deformation of such
+   repeating cell looks like. He assumes that for square holes the largest bending moment occurs at a 1/4 and 3/4 the beam. By increasingly
+   approaching circular holes, the thickness at those location increases and thus the largest bending moment shifts to the thinner parts being 
+   1/2 the beam length.
+ - So Run suggests two approaches:
+   i)  Numerical simulations using segmented beams with different cross-sectional areas. Essentially testing cross-shaped holes. If we see the
+       same behaviour for these holes as for the DNS simulations with continuous beams we have very good understanding of what is actually
+       happening.
+   ii) Analytical approach. He first suggested an approach in which we would model a repeating element element: basically a connection point
+       between vertical and horizontal elements. Here we would divide the beam up again in to segments and enforce periodicity horizontally and
+       vertically.
+       After showing my single column model he changed his mind and thought of this approach as a an even better one. Here we would divide the
+       column up into eight segments and set the ratio between elements. For a uniform beam we would find the Euler critical load. For non-
+       uniform beam we would expect a partial transition zone and eventually a non-swaying structure.
+       Modelling the second approach could be done in Marc but also in the existing Matlab environment in which I have been working up to now.
+
+ Testing multiple modes:
+ - In this part of the meeting we took a quick look at the results of the MM model using different patterning modes.
+ - The shear mode I tested the MM with did give results as we would expect though Ron was not particulary fond of them. The v0 component of
+   deformation decomposition should take care of this shear type behaviour hence Ron was surprised to see that this shear mode gave results.
+   What he suggested was to subtract the v0 deformation mode from the total deformation and try to find a patterning mode that describes the
+   resulting wave like deformation.
+ - In fact, a better approach would be to let the deformation mode follow from the analytical model. This also justifies and construction and
+   development of the analytical model.
+
+TASKS THIS WEEK
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - Send Ondrej Mail with update about meeting with Ron.
+ - Develop and run DNS simulations of microstructure with cross-shaped holes. (Segmented beams with variable thickness).
+ - Develope analytical model of single segmented column with variable thickness.
+
+
+
+ - Questions for next meeting Ondrej
+	- What would be a good way to nicely input mesh parameteres in matlab? Righ now I need to define every mesh parameter 
+          in the create RVE file even for meshes I do not need.

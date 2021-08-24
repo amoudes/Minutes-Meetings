@@ -1,0 +1,30 @@
+Meeting 26 24-08-2021
+
+Attending:
+ Thijs Oudes
+ Ron Peerlings
+
+DISCUSSION
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - Discuss status four weeks ago
+  1) Problem MM code and lack of patterning in microstructure
+
+ Progress last month
+ - Circ-to-square study
+ - Analytical model
+
+
+ - Questions for next meeting Ondrej
+	- What would be a good way to nicely input mesh parameteres in matlab? Righ now I need to define every mesh parameter 
+          in the create RVE file even for meshes I do not need.
+
+
+NOTES MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+SUMMARY MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+TASKS THIS WEEK
+---------------------------------------------------------------------------------------------------------------------------------------------
