@@ -23,7 +23,7 @@ DISCUSSION
 			 C - Show results of single mode of ci-to-sq study
 			 C - Show effects of different mode (simple extension)
 			 C - Show effects of combined mode 1 & 2.
-			 Q - Ondrej mentions extending the MM to second order FE2. What do you think Ron?
+			 Q - Ondrej mentions extending the MM to second order FE2.
 
 
 NOTES MEETING
@@ -38,6 +38,7 @@ NOTES MEETING
 SUMMARY MEETING
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
+ Circ-to-square study
  - We followed the structure of the slides to structure the meeting. We started off with discussing the deformation of holes with increasingly
    rounded corners until circular holes are obtained. The first thing Ron adresssed was how the deformation of the square holes actually looks
    like. From the images it seemd that the vertical ligaments are mostly not bent and that there is no zig-zag (sine-wave) deformation in the
@@ -84,7 +85,6 @@ SUMMARY MEETING
 TASKS THIS WEEK
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
- - Send Ondrej Mail with update about meeting with Ron.
  - Develop and run DNS simulations of microstructure with cross-shaped holes. (Segmented beams with variable thickness).
  - Develope analytical model of single segmented column with variable thickness.
 
