@@ -1,0 +1,66 @@
+Meeting 28 31-08-2021
+
+Attending:
+ Thijs Oudes
+ Ondrej Rokos
+
+DISCUSSION
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ IN PROGRESS Analytical model
+  - Linearized buckling analysis single column
+  - Discretization of single column
+
+  - Discuss results single column
+   - lack of second order buckling mode when increasing ratio.
+     Horizontal beam does seem to be necessary in order to achieve higher order buckling mode.
+
+  - Extension towards multiple beams
+
+  - Q How to set up linear buckling analysis for extended Euler beam model?  
+
+  - Q Good source for geometric stiffness matrix Euler beam elements.
+
+  - Q Derivation of equations from linearized buckling analysis.
+
+  - Meeting with Ron.
+
+NOTES MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+SUMMARY MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - Since last meeting was three days earlier we did not have that much to discuss. My main results were the linear buckling analysis on the
+   straight beam. We saw that although the beam is able to change thickness for each segment we do not obtain a higher order buckling mode.
+   Even for very large thick/thin beam ratios the beam still buckled globally (no S-shape). This leads us to believe that the horizontal bar
+   definitely influences the buckling mode we observe. We need to introduce some lateral stiffness to the system to make sure the system
+   buckles locally.
+ - We discussed several ways to do so.
+   1) Start off with horizontal springs alocated at the points of inflection (connection points between horizontal and vertical struts). This
+      would be a quick study to verify the behaviour we would like to observe. Although Ron is not a big fan of this option, it would allow
+      us to quickly verify our assumptions. Additionally, since we have the global stiffness matrix to our disposal, adding a horizontal
+      stiffness at these points is not too difficult.
+   2) Extend the existing model with horizontal columns. This requires more work since we have to think about the boundary conditions that we
+      apply. Horitontally we enforce periodicity, which means that we need to make several copies of the horizontal-vertical junction. This
+      will come close to our actual DNS simulation although it will provide us with much more information since we have the stiffness matrix
+      to our disposal. We essentially know what goes into the system.
+ - Later we discussed the techniqualities of setting up a FE model that is more complicated. In the simple model only a 4x4 Ke (element
+   stiffness matrix) sufficed, however since we also need to include axial deformation now we introduce an additional DOF so we will need a
+   6x6 Ke.
+ - Since the model turns out to be more extensive than we anticipated, expressing the system in a set of analytical equations proves to be a
+   not possible. The insight we gain by using the element stiffness matrix of beams is already sufficient for the system.
+ - The single parameter that we change will be the thick/thin ratio of the beams.
+ - The assembly of the global stiffness matrix of extended model will be more involved when we introduce more horizontal struts. This will
+   mean I will have to look at where I place what in the global stiffness matrix. One good suggestion will be using a connectivity matrix to
+   use that for the global assembly. I also have to pay attention to the change in angle of my elements. Lateral displacement of horizontal
+   elements corresponds to axial displacement of vertical elements so I have to be carefull. A good option is to use a transformation matrix
+   consiting of sin and cos terms to transform my beam elements to the desired orientation.
+
+TASKS THIS WEEK
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - Extend the single column linear buckling analysis with springs at the hor-ver ligament junctions as a quick validation.
+ - Extend the single column model with horizontal beams.
+ - Set up a meeting with Ron in about two weeks.
+

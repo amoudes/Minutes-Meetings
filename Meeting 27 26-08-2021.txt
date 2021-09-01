@@ -1,0 +1,44 @@
+Meeting 27 26-08-2021
+
+Attending:
+ Thijs Oudes
+ Ondrej Rokos
+
+DISCUSSION
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - Progress last month & comments Ron
+ DONE	 		- Circ-to-square study
+			 C - Discuss conclusions based on DNS simulations. Three regions.
+
+			 C - Hypothesis Ron & cross shaped hole study.
+ 
+IN PROGRESS 		- Analytical model
+			 C - Discuss analytical model proposal.
+			 C - Discuss hypothesis for local buckling behaviour
+			 C - 1) Mention portal frames 2) mention stacking of portal frames 3) mention simplification of simple column
+
+			 C - Single segmented column with variable thickness
+			 C - Cross-shaped hole study. 
+
+ IN PROGRESS		- Mode study
+			 C - Show results of single mode of ci-to-sq study
+			 C - Show effects of different mode (simple extension)
+			 C - Show effects of combined mode 1 & 2.
+
+NOTES MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+SUMMARY MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ The meeting mostly consisted out of discussing Tuesday's meeting with Ron and getting the ideas across we discussded then. We discussed 
+ the construction of the analytical model in more detail and the reasoning for the DNS using cross shaped holes. He mostly agreed with what
+ was discussed last Tuesday. We did not discuss no real new developments. The question that we had at the end was what direction we would
+ want to go. We could go towards the MM model and try new modes. However if we do that we risk it that we would have to get to the same study
+ later on in the project when we experiment with various modes.
+
+TASKS THIS WEEK
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - See meeting 26
