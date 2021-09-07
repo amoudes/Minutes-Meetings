@@ -8,6 +8,7 @@ DISCUSSION
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
  IN PROGRESS	- Analytical model
+ - DONE 	 - Include spring in single column model
  - DONE		 - Inclusion of horizontal beams
  - DONE		 - Implementation of linear buckling analysis
 		  - C Check for potential errors
