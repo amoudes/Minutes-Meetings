@@ -1,0 +1,38 @@
+Meeting 29 07-09-2021
+
+Attending:
+ Thijs Oudes
+ Ondrej Rokos
+
+DISCUSSION
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ IN PROGRESS	- Analytical model
+ - DONE		 - Inclusion of horizontal beams
+ - DONE		 - Implementation of linear buckling analysis
+		  - C Check for potential errors
+		  - C Explain setup of the code
+ - NOT DONE	 - Analysis and results
+		  - C Analysis seems to work.
+
+		  - Q Buckling modes seem to depend on the amount of horizontal and vertical copies of the system. Why?
+                  
+		  - Q Buckling phenomena is quite dependend on the length of beam L. When increasing L local buckling does not occur even for
+                      very large t/T ratios.
+
+ - C Discuss a suitable end goal of the project. What could be a nice point of closing the project?
+
+ - Q Set up of final report. What parts could already be written?
+ 
+ - C Mid-term presentation. When to do it?
+ 
+ - C Discuss PhD possibilities. When would it start? Explain my wishes.
+
+NOTES MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+SUMMARY MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+TASKS THIS WEEK
+---------------------------------------------------------------------------------------------------------------------------------------------
