@@ -35,5 +35,52 @@ NOTES MEETING
 SUMMARY MEETING
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
+ - The general topic of the meeting was 1) discussing the set up of the FE code and 2) analysing the results of the code.
+
+ - We also briefly discussed the inclusion of a horizontal spring to the single column and confirmed the effect it had on the overal
+   buckling more. It was in line with the theory I found in literature.
+
+ Code run through:
+ - In the first part we walked through the code in search for any inconsistensies, problems or errors. Ondrej commented that the general
+   structure is good with a few comments here and there.
+ - The major comment he had was on how the geometric stiffness matrix (Kg) is constructed. I opted to use the method he also used in the
+   RVE_F.m file, that cuts corners in its construction of Kg. Since he did not have an explicit expression for Kg he used first a small
+   deformation to construct Kg. Since I do have an explicit expression for Kge it is more neat to use that. It also mitigates any potential
+   errors that may stem from the less neat way of obtaining Kg.
+  - What the new method entails is that I need to compute the normal forces in each element. I can do this by obtaining the strain in each
+    element and than using the simple Hookean relation to obtain the normal force. I do have to take into account the transition between
+    local and global coordinates.
+
+ Results analysis:
+ - We spent some more time on the analyzing the results.
+ - Initially we saw that the frame did not behave as we would expect with ratio = 1. The vertical ligaments showed a higher order buckling
+   mode than the big D shape. We believe this to be caused by the clamped boundary conditions. When we increase the vertical layer count the
+   buckling mode indeed changes to a D shape. Also if we leviate the clamped to a pinned configuration the structure indeed buckles with a D
+   shape.	-->	We can therefore conclude that the minimum required vertical layer should be large enough to mitigate the boundary
+                        layer effect. Typically this should >= 4. (An even is required to allow patterning).
+		-->     Horizontally the pattern repeats every 2 cells, therefore the not more than 2 horizontal copies are required. More 
+           		only results in larger computational effort.
+ - I found an error in the way thin and thick elements are assigned. I corrected it on the fly. It did change the results since only a small
+   part of the frame now consists out of thick elements. It changes the overal buckling behaviour in that local patterning does not appear.
+   It therefore also depends on the location of thicker elements. When changing the ratio I therefore also should make sure that the amount
+   thick elements changes.
+ - Since we need to take into account boundary layer effects, the original 2x2 representation of the RVE does not suffice anymore. As a
+   consequence I will also have to change how the mesh is set up. Instead of modeling a junction of vertical and horizontal bars I will
+   change to modeling a single hole and repeating this 2x horitonzally and 4x vertically.
+
+ Status project, report writing, mid-term presentation
+ - The end of the project starts to come in sight. Therefore we have to start to think about how to wrap up the project and have a nice
+   conclusion. Right now it seems that the topology optimization part of the project is pushed to a follow up project and that this project
+   revolves around extending the MM model s.t. it is able to treat more general microstructures. 
+ - Next week Thursday we have a meeting with Ron. Here we will discuss the project status, next steps and good point of finalization. After
+   that meeting we can schedule my mid-term presentation and how the report will be set up.
+
+
 TASKS THIS WEEK
 ---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - Change construction of Kg
+ - Change the construction of the mesh
+ - Alter the way thin and thick elements are assigned.
+
+ - Think about report set up.

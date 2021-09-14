@@ -1,0 +1,83 @@
+Meeting 30 14-09-2021
+
+Attending:
+ Thijs Oudes
+ Ondrej Rokos
+
+DISCUSSION
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ DONE    	- Change construction of Kg
+		   Used explicit expression for Kg
+
+ DONE  		- Change the construction of the mesh
+		   Now uses square repeating unit cells
+
+ NOT NECESSARY  - Alter the way thin and thick elements are assigned.
+ 		   Local patterning occurs in expected way using new mesh
+
+ DONE 		- Run simulations & analysis
+		   Layer count study
+		   Ratio study
+
+ Q - eigenvalues are negative. So I take the minimum of the absolute value. would this be correct?
+
+ - Discuss future steps
+
+NOTES MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - least square and projection
+
+SUMMARY MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ Comments code
+ - Just before the meeting I had solved a bug that had caused wrong simulations for a few days. So I did not have the perfect preparation for
+   the meeting. On the other hand my simulations right now showed good results and gave results that we would expect.
+ - Ondrej had just a minor comment about how I took the inifinity norm to determine the magnitude of a vector, which in this particular case
+   would work since the elements were aligned with the coordinate axis but in general would not. I changed "inf" to "2" and that should
+   suffice.
+ - Ondrej had another comment about the linearity of the code. Since we are only treating a pure linear problem the input force value should
+   not matter. However for input values of 1 the resulting buckling mode did differ from smaller values. After a bit of investigation we
+   found that using E = 1 and P = 1, the force value is too big and the eigenmode calculation falls back to numerical noise. So the eigenmode
+   does not make sense. For smaller P values (or increasing the E) the critical buckling mode would be independent from the input force.
+   So if we would want to use unit input force we have to increase the E, which is not a problem.
+ - Ondrej also made a small comment about model validation. I checked the simple column model for numerical agreement with analytical Euler
+   critical load, which matched perfectly. For completion I could do the same thing with a tall, slender, non-periodic column. It should give
+   the same value.
+
+ Results analysis
+ - The results are very much in line with the DNS simulations. We see a global buckling region, transision region and a local buckling
+   region.
+ - From hereforth the question is how to move forward. Now that we have a working model the question is can we think of an simpler model that
+   can describe the same thing. If not we stick to the current model. Simplification of the model is difficult if not impossible. We need the
+   number of layers to simulate global buckling and we need a minimum of two horizontal layers for periodicity in the case of local buckling.
+   So as it stands right now the current model seems to be the simplest representation of the system at hand (though it already comes very
+   close to the full 2D DNS simulation).
+ - If we were to use the current model the next logical question is how we could capture global buckling and the transition to local buckling.
+   We already discussed this before in previous meetings but how we see it right now is that we could either extend the MM to second order 
+   FE2. This enforces a higher order continuum on the deformation and should connect the shearing modes (since you also include rotational
+   continuum, just as in beams). This would prevent the individual shearing modes of each unit cell and connect it overall. It would however
+   include a third order tensor in the deformation decomposition which would make the overall derivation more techniqual. In addition we
+   would need more (complex) orthogonality constraints on the microfluctuation field (to prevent two parts of the model to describe the same
+   thing) and need to extend the boundary conditions. The latter could be problematic since we would not really know what to prescribe for
+   this higher order continuum.
+ - Another possibility would be to describe these higher order deformation (bending) effects using the micromorphic fields. Ondrej recently
+   read a paper in which it stated that it would be possible to decompose this third order tensor into 9 different parts. This could be a
+   suitable option. We however do not know what these deformations look like. This is something I can invesitage using my beam model.
+   Using the patterning modes we hopefull are able to establish some connectivity on the global level and thus describe global buckling.
+ - So to recap: 1) describe higher order continuum using second order FE2 2) describe higher order continuum using patterning modes.
+ - A way to tackle this is to first look at the type of deformation of the unit cells after removal of the linear first order components.
+   This can be done using linear least square projections on the deformed unit cells.
+   By looking at the deformation we see then we should be able to move forward. Ondrej expects a trapezoidal shape and/or C shape to come
+   out after backdeformation.
+
+
+TASKS THIS WEEK
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - Back deform RVEs from LBA of beam frame model to find deformation modes.
+
+ - Contact Ron for live or online meeting on Thursday.
+
