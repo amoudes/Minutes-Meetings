@@ -1,0 +1,82 @@
+Meeting 31 16-09-2021
+
+Attending:
+ Thijs Oudes
+ Ondrej Rokos
+ Ron Peerlings
+
+DISCUSSION
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - Discuss current status
+
+ - Discuss mid-term presentation
+
+ - Discuss suitable end point of the project
+
+NOTES MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+SUMMARY MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - This meeting was the first meeting in a while together with Ron. We started by summarizing the point where we left off three weeks ago.
+   I summarized what we had done previously and answered questions Ron had after our previous meeting.
+ - This meeting was one of the important meetings we have had up to now since we discussed and decided what direction we would like to take 
+   the thesis and what the core of the thesis would be about. More on this later.
+ - First of all we briefly discussed the type of deformation we see for the repeating RVE. The enlarged image of the microstructure of the
+   DNS simulation with square holes indeed showed what we already suspected. That the major bending moments in the square hole array are
+   found at the quarter and three quarter points of the ligaments (and not at the junctions).
+ - The next step we took was the approximation of circular holes by dividing each ligament up into four segments and changing varying the
+   thickness ratio between ligaments. Effectively we would model cross shaped holes. I ran simulations for the transition from uniform to
+   high thickness ratio and indeed we saw the same type of transition from global to local buckling as for continuous holes.
+   - side comment: I should be careful with meshing. R = 1 and R = 2.7 have different mesh densities which could lead to differences in
+     simulation results. So if we would do it more neatly I should keep the mesh density roughly equal.
+   Ron was pleased to see that the results we obtained are in line with the hypothesis we posed in the previous meeting. By increasing the 
+   thickness ratio we are able to relocate the position of the major bending moment towards the center of the ligament, eventually resulting
+   in local buckling pattern.
+ - Where it comes to the simplified single column model I did make some mistakes in my assumptions when it comes to the number of stackes
+   cells and the applied boundary conditions.
+   - Stacking of cells. As we have already seen it is not possible to capture both global and local buckling with the stacking of two cells.
+     In fact what we are for is the bending behaviour of a single cell. If we think about it the stacking of two cells is too much.
+   - Boundary conditions. The two problems go hand-in-hand. In order to capture the global buckling we would actually need to model only one
+     ligament and only the moment at the top edge. This would allow us to get a shear typ deformation and thus a bending mode with two major
+     bending moments in the ligament.
+   Thus I'll have to reperform the simulations on the unit cells using these boundary conditions and geometry. It was argued during the 
+   meeting that we will still not be able to capture the transition and that will still need some kind of horizontal stiffness/moment at to 
+   capture local buckling, but it is still worth trying.
+ - The results that we had for the single column analysis were for these reasons not discussed in detail.
+ - The discussion followed on what type of boundary conditions we would need for a single column to show both global and local buckling. We
+   could for example enforce zero bending halfway through and at the top and bottom, but this would result in the prevention of global
+   buckling. In short what we concluded is that the horizontal ligaments are most needed for both global and local buckling.
+ - This allowed us to proceed to the frame LBA. Ron was actually quite pleased to see that this had been done as well and also in a proper
+   manner. It was good that we are able to see both global and local buckling depending on the thickness ratio. Ron however argued that the
+   boundary layer effects actually prevent the model from actually showing real global buckling. The same type of boundary conditions we
+   would want to enforce on the single column should be applied here as well. Meaning that we would actually need vertical periodicity as
+   well.
+   - A quick way of validation would be to perform horizontal and vertical periodicity analysis on 2x2 periodic elements for square and
+     circular holes. For circular holes we would see the patterning mode popping op and for square holes we should see the shear mode.
+   - The frame model should behave similarly.
+
+ - The discussion that followed was about how to proceed next with the project. With the time we still have we had to make a decision on
+   what we would like to focuss on. As Ondrej put it, we have two paths we could take. 1) Continue with our study on global to local buckling
+   and really to understand the transition. 2) Try to implement our current findings in the MM model and find a way to capture it using 
+   patterning modes or higher order FE2.
+   As I see it in order to do 2) you need a good understanding of 1). Ron agreed on this and was more enthusiastic about option 1). It has
+   the potential to be published. And there are numerous things we could still investigate with option 1), for example partial global and 
+   partial local buckling patterns in one microstructure. For this reason we decided to continue working on option 1), thereby redetermining
+   the goal of the project and dropping the topology optimization part of the thesis.
+ - The last part was about the potential of the project to be published, and the choice I have for writing my report in general report style
+   or in the style of a draft paper such it has the possiblity to be published. Either choice has its benefits but I have to decide on time
+   since it requires some time and dedication to write it in one form.
+   I decided that I will not make a decision at the moment but in a few weeks after I see how things are going. My preference at the moment 
+   lies at writing a draft paper.
+ - Lastly we scheduled my mid-term presentation on the 4th of October.
+
+TASKS THIS WEEK
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - Fix the boundary conditions and geometry in the single beam column
+  - Redo the simulations on single column
+ - Perform 2x2 RVE simulations of cross shaped hole in 2D DNS analysis with horizontal and vertical periodicity.
+ - Rewrite frame LBA with new b.c. and vertical periodicity on 2x2 RVE.

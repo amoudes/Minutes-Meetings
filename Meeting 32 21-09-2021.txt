@@ -1,0 +1,37 @@
+Meeting 32 21-09-2021
+
+Attending:
+ Thijs Oudes
+ Ondrej Rokos
+
+DISCUSSION
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - Fix the boundary conditions and geometry in the single beam column
+  - Redo the simulations on single column
+
+  Q - I reworked the boundary conditions and ran the simulations again but I did not get results I wanted.
+      We can have a look at it live during the meeting and check what would work.
+
+ - Perform 2x2 RVE simulations of cross shaped hole in 2D DNS analysis with horizontal and vertical periodicity.
+  C - Discuss results
+
+  Q - A much larger displacement is required to initiate buckling (both global and local) why?
+
+
+ - Rewrite frame LBA with new b.c. and vertical periodicity on 2x2 RVE.
+  Q - I implemented vertical and horizontal periodicity using Lagrange multipliers and spectral decomposition. But results are not in line
+      with DNS simulations. Why? Would there be anything wrong about implementation of periodicity?
+
+
+  Q - If so: I thought using Lagrange multipliers was not the right way so I tried to implement the condensation method. I am not sure how
+      to do this correctly. I need some explanation.
+
+NOTES MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+SUMMARY MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+TASKS THIS WEEK
+---------------------------------------------------------------------------------------------------------------------------------------------
