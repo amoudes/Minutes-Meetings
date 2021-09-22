@@ -10,14 +10,14 @@ DISCUSSION
  - Fix the boundary conditions and geometry in the single beam column
   - Redo the simulations on single column
 
-  Q - I reworked the boundary conditions and ran the simulations again but I did not get results I wanted.
-      We can have a look at it live during the meeting and check what would work.
+   Q - I reworked the boundary conditions and ran the simulations again but I did not get results I wanted.
+       We can have a look at it live during the meeting and check what would work.
 
  - Perform 2x2 RVE simulations of cross shaped hole in 2D DNS analysis with horizontal and vertical periodicity.
-  C - Discuss results
+  C - Discuss boundary conditions  
+  C - Discuss results 
 
   Q - A much larger displacement is required to initiate buckling (both global and local) why?
-
 
  - Rewrite frame LBA with new b.c. and vertical periodicity on 2x2 RVE.
   Q - I implemented vertical and horizontal periodicity using Lagrange multipliers and spectral decomposition. But results are not in line
@@ -30,8 +30,43 @@ DISCUSSION
 NOTES MEETING
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
+ - simple beam not possible without including translational springs
+ - model half of beam at the edges
+ - when model is done perform parametric study
+ - if done we can condense out entire matrix to estimate lateral spring stiffness
+
 SUMMARY MEETING
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
+ - Today's meeting centered around i) modeling of the single column buckling model and if we are able to get both global and local buckling 
+   with this simple model ii) short analysis on the 2D DNS simulation for cross shaped holes iii) implementation of LBA for frames.
+ - We started off by discussing the implementation of the single column model and whether it is able to capture both global and local
+   buckling. The question was whether we are able to recreate the transition using only rotational springs located at both ends. 
+   As it turns out it (most likely) not possible. We need some way of preventing translational motion at the top when increasing the spring
+   stiffness. With rotational springs this is not possible since the bending of the beam moves towards the energetically most favourable
+   configuration -> rotation angle with equal sings. For local buckling to occur these rotation angles should be opposite. which does not
+   happen. Therefore we would need some form of translational spring in place to prevent sway (global buckling), which is already described
+   in the paper I send Ondrej.
+ - Next we discussed the results of the 2D DNS simulations. The results we obtained were in line with what we would want to see. For uniform
+   (prismatic) beams we see that the 2x2 system buckles in the same manner as in global buckling. And if we increase the thick/thin ratio we
+   see the local buckling pattern popping up.
+   - The question about the large stretch required was answered: I implemented absolute displacement (as opposed to stretch which is a 
+     percentage of the total size) and introducing vertical periodicity as well causes a much more stiff configuration hence larger
+     displacements are needed to get result in the same buckle behaviour.
+ - The last part we discussed was the implementation of horizontal and vertical periodicity in the frame model. The results of the vertical
+   periodicity I showed of the frame model did not show perfect periodicty, here and there there were some discrepansies. He had the same
+   thought process I had and related it to the method of Lagrange multipliers and spectral decomposition and suggested to choose for the
+   condensation method instead. I had already thought of this and had some questions myself on the implementation of the condensation method.
+   - Side comment: for perfect periodicity I should make the edge bars less half the thickness of the inner bars since due to periodicity
+     they are simply copied to the other edge. If not they would be much more stiff than they should be.
+ - If we could get the 2x2 frame model to work we could use it to estimate the lateral and rotational spring stiffnesses by condensitation
+   of the entire frame into one parameter. This value could be used as an input value in for example a simple analytical model.
+
 TASKS THIS WEEK
 ---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - Implement condenstation method
+  - use half beam width
+ - Perform parametric study
+ - Prepare slides mid-term presentation
+ - Think of name of the project
