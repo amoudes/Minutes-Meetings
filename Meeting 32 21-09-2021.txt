@@ -65,8 +65,8 @@ SUMMARY MEETING
 TASKS THIS WEEK
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
- - Implement condenstation method
-  - use half beam width
+ x Implement condenstation method
+  x use half beam width
  - Perform parametric study
  - Prepare slides mid-term presentation
  - Think of name of the project
