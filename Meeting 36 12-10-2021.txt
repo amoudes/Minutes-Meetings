@@ -1,0 +1,83 @@
+Meeting 36 12-10-2021
+
+Attending:
+ Thijs Oudes
+ Ondrej Rokos
+
+DISCUSSION
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - L-bracket model
+
+ - Leaf spring model
+
+ - Determine internal energy
+
+ - Q How to proceed with analytical model?
+ 
+
+NOTES MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+ 
+ - discrete case, two rot springs, one bar and two rotations
+ - look at solution paper and find if local buckling is possible in their solution
+
+ - L-bracket and frame not perfect comparison, still a small difference. plot on top of each other and scale accordingly
+
+ - L-bracket do analytical derivation of 1 element and see dependencies after appying periodicity conditions
+
+SUMMARY MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Single column model
+ - We spent quite some time discussing the single column beam. From the simulations I showed that under all conditions the beam buckles in
+   the global manner.
+ - So from what we see is that the beam will always prefer global buckling but it is not a proof. Since Ron alluded to it multiple times we 
+   would want to have a more solid (analytical proof) why the beam will always buckle globally. Most of the time during the meeting was spent
+   on thinking about a proof.
+ - In short what we though about:
+   - If we take the thick parts of the beams as solid we are able to translate the problem to only the compliant leaf spring part of the
+     beam. This leaf spring part can buckle either globally or locally and thus we only scale the problem down to this spring.
+   - At first we hoped to find that the effective length K of the local buckling was smaller than the global one since this would mean that
+     global buckling would alwys occur first. However they both have the same effective length (Keff = 1.0) thus they also have the same
+     wave length.
+   - Where we think the difference lies the requried energie to counter rotate the two springs above the shearing. So we think that the
+     internal energy using the integral over 1/2EIk^2(x)dx is the same and the additional term for local buckling is the 1/2cphi^2 but it is
+     not proven.
+   - The comparison we had before where we have local buckling for c = 0 and global for c = inf can not be compared it is like comparing two
+     different situations (apples and pears so to say). Thus we need to make a fare comparison.
+   Possible proofs:
+   1) Use the solution from the unhinhibited column from the paper by Ochoa and see if it is possible to obtain local buckling using their 
+      equations.
+   2) Discretize the thin beam using three nodes with rotational springs at each node. ctop = cbot = c1, cmiddle = c2. Compress is using 
+      unit force. Compute the total internal energy using work done, stored energy in springs and plot the energy for a lot of combinations
+      of c1 and c2. Hopefully the global buckling will always have lower energy than the local buckling.
+
+L-bracket
+ - The L-bracket simulations showed almost the same behaviour as the full 2x2 frame model. The L-bracket gives slightly higher critical loads
+   which Ondrej did not expect, he expected near perfect similarity. So somehow the b.c. on the L-bracket are a bit too strict. We could
+   explain it by saying that the L-bracket assumes perfect symmetry between horizontal and vertical ligaments. While we see that it is not
+   the case in the 2x2 frame (there is a small difference between the horizontal and vertical buckling columns).
+ - But all in all, the L- bracket model seams very promising as the results are very similar.
+ - To move forward to an analytical model I can model the prismatic L-bracket using only a single element for each ligament giving a 3x3
+   reduced stiffness matrix that allows us to solve the eigenvalue problem by hand.
+ - Also using this 1 element/beam configuration we can clearly study the effects of pre-stress on the beams by means of the reduced Kg.
+   I can clearly see for global and local buckling which elements in the stiffness matrix are strenghtened and weakened by the Kg.
+ - Lastly we briefly touched upon modeling of non-prismatic beams by means of the leaf spring approach suggested by Ron. I ran simulations
+   using this approach and found out that we can indeed describe the transition between the two buckling phenomena by increasing the size
+   of the rigid islands. We can hopefully do a similar thing for the L-bracket.
+
+Side-comment:
+ - For plotting, the used interpolating functions are cubic in nature hence linear plot between nodes can be taken to higher order by also
+   including rotations. I should tweak the plotmesh function therefore.
+
+
+TASKS THIS WEEK
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - Try to find a proof for only global buckling of single column beams
+  - Using equations from paper
+  - Using discretized thin beam approach
+ - Set up analytical equations for single element L-brackets and study effects Kg on Kr
+ - Expand plotting procedure to cubic
+ - 

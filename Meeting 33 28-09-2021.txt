@@ -1,0 +1,78 @@
+Meeting 33 28-09-2021
+
+Attending:
+ Thijs Oudes
+ Ondrej Rokos
+
+DISCUSSION
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ DONE 		- Implement condensation method LBA frame model
+ 		 - include half beam width for elements on edges
+
+
+ DONE 		- Perform parametric study
+		 C - Discuss and show results
+		   - Lack of transition in 2x2 DNS simulation
+
+
+ DONE 		- Prepare slides mid-term presentation
+		 C - discuss slides
+
+ Q - How to proceed with analytical model?
+
+
+
+NOTES MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - eigenvalue study frame model
+ - align beam model with DNS model
+ - condensation of frame model into important parameters
+
+SUMMARY MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Frame model
+ - The frame model using the condensation method for horizontal and vertical periodicity works well and indeed shows good periodicity.
+ - I had a few questions still about the lack of a transition region. The reason for a lack of transition reagon is that the LBA only takes
+   into account the lowest eigenvalue and corresponding mode. This means that only one will show up in the LBA and a combination is not
+   possible. What I can do to gain more insight in the how the eigenvalues behave with the thickness ratio is to plot both eigenvalues as a
+   function of thickness ratio.
+ - To get a better comparison between the DNS and the frame model I should use similar input values. I can obtain the Young's modulus through
+   previously set up equations in Ondrej's notes.
+ - Also to get a better comparison I should rethink the cross and how the cross shaped hole behaves. To be very neat I should maintain similar
+   material density throughout when making comparisons. Though this is not perfectly clear to me yet.
+ 
+Condensation to three important components
+ - We consider the most simple representation of the system to be the a single column with lateral and rotational springs on the two ends. 
+ - What we aim to do with the 2x2 frame model is to find values for the spring stiffnesses.
+ - To find the values what we need to do is to condense the entire stiffness matrix into single variables that correspond to the horizontal
+   vertical and rotational spring stiffnesses.
+ - This condensation takes place after partitioning of the boundary conditions and after condensation of the periodic nodes. Thus at the very
+   end. So I need to take into account the remapping of the nodes from the original configuration to the condensed out configuration.
+ - The nodes we are interested in is the central node in the frame. So the junction of the vertical and horizontal ligament.
+ - As a sanity check I could also check the joint nodes at the edges, they should have the same value as the central node.
+ - Hopefully what we will see is that when we have prismatic (uniform) beams we have values of the springs stiffnesses that we can also obtain
+   from analytical equations. This will suggest that the 2x2 model can be approximated using the simple beam column model.
+ - Furthermore we hope to find that under prismatic conditions we see that the rotational stiffness is four times the translational stiffness.
+ - We can hopefully relate the values of the stiffnesses back to what we know and see in the deformed configurations. I should take into
+   account that I have to make a fair comparison between the deformed deformed configurations. So equal displacements.
+ - If I condense out to the three relevant stiffnesses I will obtain a 3x3 matrix where the components will most likely be coupled. To avoid
+   this I could condense down to just 1 parameter.
+
+Presentation
+ - Overall Ondrej was quite positive about the presentation. He had a few comments though:
+  - Leave out the techniqualities of TO. Mention it briefly as a possible way of designing the microstructure
+  - Elaborate more on the design freedom we have. That I ran a lot of simulations to test how far we could push the micromorphic model
+  - Include the analytical model in future steps.
+
+TASKS THIS WEEK
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - Make a neat comparison between DNS and frame model
+ - Make figures of eigenvalues vs thickness ratio of frame model
+ - Implement condensation of the stiffness matrix to 3 stiffnesses
+ - Plot stiffnesses vs thickness ratio
+ - Link to 1D model (look at paper and maybe set up analytical equations).
+ - Update presentation and practice for Monday.

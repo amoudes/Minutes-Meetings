@@ -1,0 +1,43 @@
+Meeting 41 15-11-2021
+
+Attending:
+ Thijs Oudes
+ Ondrej Rokos
+ Ron Peerlings
+
+DISCUSSION
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - Q equal mass comparison microstructure
+
+ - Discuss structure draft paper
+
+NOTES MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+SUMMARY MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - The discussion focussed on the structure and content of the draft paper and what we want to get out of it.
+ - Both Ron and Ondrej had comments about the draft paper.
+ - First we discussed what we should do with cruciform example. That I wanted to do an equal mass comparison. Ron quite quickly sweeped that
+   off the table as it is not the most pressing thing and not that important. I can easily stick to what I had before with the thinnest 
+   section as benchmark.
+ - He had more comments as well about the structure of the report. Since most of the comments were are written down in the draft paper itself
+   I will not write them down here.
+ - I will reshuffle the purpose of the sections.
+   1) introduction - focus on the difference between global and local buckling.
+   2) formulate problem statement and conclude with hypothesis
+   3) Introduce simplified representation of the problem and later L-bracket that leads to ananlytical solution
+   4) Present applications and appliances of the learned behaviour the analytical model
+   5) End with conclusions and discussion
+ - Section 4 applications in this section we show some examples of what we have learned. It should not focuss on the actual verification of 
+   the model. We present some use cases in which we can alter the buckling behaviour or enforcing some buckling mechanics by assigning
+   material where we want it.
+ - Focuss should be on writing right now not on on section 4.
+
+TASKS THIS WEEK
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - Rewrite draft paper structure and send it to Ron soon (wednesday/thursday)
+ - Start writing report sections

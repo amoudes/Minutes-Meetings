@@ -1,0 +1,42 @@
+Meeting 44 30-11-2021
+
+Attending:
+ Thijs Oudes
+ Ondrej Rokos
+
+DISCUSSION
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Questions:
+ Introduction:
+ - discuss comments Ondrej
+    - introduction I mention circular and square holes -> abstract from that, go to minor changes in the microstructure.
+      Fig. 1a infinite wave length, 1b half a sine wave wavelength
+    - Include paragraph in which I dive a bit deeper into patterning mechanical metamaterials
+      Materials with switchable properties, mention material parameters, importance of pre-buckling and post-buckling material properties
+
+    - perhaps include a figure with more minute changes to the microstructure that result in different modes
+
+ Numerical study:
+ - what parameter to use for sq-to-ci study?
+    explain why we chose to opt for this method then it is clear
+ - different units radius R and label in Figure schematic numerical simulations
+    hard coding no problem
+ - discuss LBA simulations
+ - determining rho_eff for LBA simulations
+ - units Fcr
+   remove units and disctractions from transition figure.
+   replace eps for pdf
+
+
+ Misc:
+ - mention manufactering errors and mistakes
+
+NOTES MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+SUMMARY MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+TASKS THIS WEEK
+---------------------------------------------------------------------------------------------------------------------------------------------

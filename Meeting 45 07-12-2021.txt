@@ -1,0 +1,53 @@
+Meeting 45 07-12-2021
+
+Attending:
+ Thijs Oudes
+ Ondrej Rokos
+
+DISCUSSION
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Questions:
+ Introduction:
+	- what is the third comment in the abstract
+	- abstract: comment on To validate this assumption
+		- gain more insights (now it is relatively weak) frame it stronger.
+ 			1) gain insights in behaviour
+			2) validite
+			3) design principles
+
+
+ Numerical study:
+	- Representation of LBA study plots results
+
+ Analytical model:
+	- discuss mapping alpha to rho
+	- Division by 2Fe, should it not be 4Fe?
+
+ Application:
+	- Discuss both models
+	- How to formulate the improvement made
+
+
+
+ Misc:
+ - mention manufactering errors and mistakes
+
+NOTES MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - run RVE line 343 for stress calculation
+ - calculate reaction forces through: evaluation corner nodes
+                                      unit force approach
+ 				      take into account the left corner node when summarizing
+
+ - Argue in terms of stresses in terms of stresses. determine stresses instead of forces since we are dealing with RVEs
+   Retcon: stay with Euler critical loads -> more intuititive mention that it can also be expressed in stresses
+
+ - explain who limits at rho = 0.25 - rho  = 1
+
+SUMMARY MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+TASKS THIS WEEK
+---------------------------------------------------------------------------------------------------------------------------------------------

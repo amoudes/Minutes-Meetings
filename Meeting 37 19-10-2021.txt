@@ -1,0 +1,60 @@
+Meeting 37 19-10-2021
+
+Attending:
+ Thijs Oudes
+ Ondrej Rokos
+
+DISCUSSION
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - Expand plotting procedure to cubic
+
+ - Try to find a proof for only global buckling of single column beams
+  - Using equations from paper
+  - Using discretized thin beam approach
+
+ - Set up analytical equations for single element L-brackets and study effects Kg on Kr
+
+NOTES MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+SUMMARY MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Cubic interpolation
+ - First we discussed briefly the plotting issue with the rotations. It is most likely something with the rotations. They seem to be too big.
+ - Though we could dive deeper into it, Ondrej intervened and rightly said so that it is not owrht the time which makes sense.
+
+Single column
+ - Next we discussed the analytical approach to prove local buckling does not occur when we only have a single column.
+ - We first discussed the approach I took using the paper by Ochoa that uses analytical equations to obtain the critical buckling force for a
+   clamped to pinned columns. Ondrej considered the graph I showed sufficient proof for a prismatic beam to buckle always globally when
+   when side sway is not inhibited and having two rotational springs on the top and bottom.
+ - However when we were thinking about the simplifications we made we considered that we might have simplified too much. We simply translated
+   the problem to the leaf spring and assumed the rigid part does not affect the behaviour of the leaf spring. We considered this too be too
+   coarse of an assumption and we decided that we did have to take the rigid sections into account. 
+ - This means that we will have to redo the derivation but then for the rod extended. This could be more difficult since the DE is more 
+   difficult. But we will have to see what comes out.
+ Secondly we discussed the two element approach
+ - I showed that indeed the internal energy is lower for globally swaying than local buckling which is nice. However Ondrej was not fully
+   convinced of the model. We would have to proof that the global buckling is always lower than local buckling for every ratio of c1/c2.
+   Ondrej thinks the first approach is neater since we have a continuous column.
+
+L-bracket
+ - There is a small difference between the frame and l-bracket model. We manage to probably find the problem which is that the normal force
+   is not zero for the horizontal elements after we compress it. I can hardcode it to make sure to solve it. Hopefully this will make sure
+   we have a 1-to-1 comparison between frame and l-bracket.
+ - Ondrej had hoped to gain more insight in which parts of the stiffness matrix are enforced and weakened by applying the perodicity
+   constraints. Unfortunately this turned out to be more complex than he had thought.
+ - To see the transition between the two buckling modes we could model the solid sections as islands and then perform a similar stiffness
+   matrix comparison as before. It would likely yield also a 3x3 matrix when we use 1 element for hor and ver.
+
+
+TASKS THIS WEEK
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ x Verify and correct difference between L-bracket and 2x2 frame.
+ - Derive and compute effective length of single column with rigid parts added using model from paper Ochoa.
+ - Extend the L-bracket model to take into account the leaf springs and rigid parts with variable length and perform stiffness matrix
+   analysis.
+ - plot modes using analytical equations Ochoa.

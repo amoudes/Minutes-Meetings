@@ -1,0 +1,74 @@
+Meeting 34 05-10-2021
+
+Attending:
+ Thijs Oudes
+ Ondrej Rokos
+
+DISCUSSION
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ NOT DONE	- Make a neat comparison between DNS and frame model
+ 
+ IN PROGRESS	- Make figures of eigenvalues vs thickness ratio of frame model
+
+		 Q - Where to include half the beam thickness?
+
+		 Q - Sanity checks LBA. Inconsisten critical buckling force.
+
+ IN PROGRESS	- Implement condensation of the stiffness matrix to 3 stiffnesses
+
+ IN PROGRESS	- Plot stiffnesses vs thickness ratio
+
+ NOT DONE	- Link to 1D model (look at paper and maybe set up analytical equations).
+
+ DONE		- Update presentation and practice for Monday.
+
+NOTES MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - plot normal forces in the frame
+ - run and compare model with decompostiion and unit force
+
+SUMMARY MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - We started off by discussing my problems of making a fair comparison between the frame model and the analytical/single column model for
+   where we know that the solution is correct. One approach Ondrej suggested to test whether the frame model is to cancel the thickness and 
+   Young's modulus for the horizontal ligaments and compress accordingly. We should see the second order buckling mode popping up due to 
+   the periodicity constraints. The corresponding critical buckling force should correspond with the second order buckling of the single
+   column model.
+ - Next we discussed the discrepansie between the critical bucklinkg forces when compressing the frame model. It seems that the critical
+   buckling force was dependend on the force P we put in. Also I might mix something up with the direction of the force since I obtain
+   negative eigenvalues indiciating that we should pull on it to get to the buckling mode. In any case we fixed the problem of the dependency
+   of the force during the meeting. I applied the force horizontally intead of vertically. The deformed configuration looks to be okay and
+   behave as we would expect.
+   - We also dived a bit deeper in the computation of the eigenvalues and what the values actually mean. 
+   - To study the effects of the normal forces in the beams elements I should plot the value of the normal forces in the mesh using some color
+     coding. e.g. red for compression and blue for tension. We would do this to see where compression and tension arise in the frame and on 
+     places where we would expect them to. Which would lead to see what the effects of the geometric stiffness matrix are.
+ - Last we discussed teh connection of the frame model to the single column model. Yesterday Ron made a suggestion about using an L-bracket
+   instead of using springs to model the connecting ligaments. We though about it but it seems not possible to do it this way. The problem 
+   lies in applying the boundary conditions. Using boundary conditions we can either obtain one of the two buckling modes:
+   - symmetry conditions: local buckling
+   - periodic conditions: global buckling
+   hence one model that encompasses both buckling modes is in what we think not possible. Therefore we resort to the model with springs.
+ - To proof the concept of springs to Ron I could run the model using a variety of combinations of springs stiffnesses to see if it is
+   indeed possible to obtain local and global buckling just by varying the ratio between the stiffnesses. We brainstormed on the type of 
+   deformations we would expect from the single column model and we should clearly be able to obtain local and global buckling. Though a 
+   third buckling mode also comes into play judging from the ratio-lambda study I performed on the frame model.
+ - For the condensation of the frame model; I can continue on this front as well. I will have to pick the left middle node as this will
+   best correspond the situation of the single column model (fixed x-y bottom, rot. springs top & bottom, translational spring top). I can
+   use the values from the static condensation in the single column model and compute the eigenvalues. The critical buckling forces should
+   be in the same order of magnitude with hopefully max ~10% error.
+ - I should also proceed with the static condensation and the engineering method of obtaining the stiffness value. We saw before that these
+   values should have very small differences.
+
+
+TASKS THIS WEEK
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+x 1) Check correct functioning of frame model.
+  2) Proof of concept of the single column model
+x 3) Condensation and engineering approach of frame model
+x 4) Plot normal forces in elements
+  5) Single column model study using condensed stiffness values

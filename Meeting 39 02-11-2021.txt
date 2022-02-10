@@ -1,0 +1,73 @@
+Meeting 39 02-11-2021
+
+Attending:
+ Thijs Oudes
+ Ondrej Rokos
+
+DISCUSSION
+---------------------------------------------------------------------------------------------------------------------------------------------
+ 
+ - Influece axial compression energy method
+ 
+ - Derivation internal energy local buckling mode
+
+ - Derivation single column with rigid rod extension
+
+ - Transformation FE model
+  - What to do with geometric stiffness matrix?
+ 
+ - Discuss report structure 
+
+
+NOTES MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+SUMMARY MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Energy approach
+ - During the first discussion we talked about the energy approach and the derivation I made for the local buckling pattern
+ - It turns out that since I prescribe the displacement I do not have a contribution of work done by external forces which makes sense. I
+   only have a contribution of the elastically stored energy so the answer for prismatic beams is quite straight forward and already there in 
+   the derivation.
+ - The extension with rigid rods had some mistaktes. I included the length of the horizontal part instead of the length change of the vertical
+   part of the rigid bar. So I need to change that part.
+ - What we also found out is that we a linearization of the problem will not help with finding the energy of the system since then the length
+   change due in the rigid bar is set to zero. We will need to incorporate a higher order term (quadratic) to make sure we see a length change.
+   This makes the equations a bit more difficult but still solveable. This I will have to do soon.
+ - To verify whether the energy approach is accurate I can take the partial deriative of the energy with respect to the applied deformation to
+   obtain the critical buckling force. If this is constant it should correspond to the critical buckling force in the DNS cases. Hopefully
+   they are somewhat accurate.
+ - We also disccused the extension of enegy approach to the global buckling pattern. Since we have two degrees of freedom here the derivations
+   are a bit more technical. I have to determine what the deflection shape looks like as a function of the sway and the rotation angle. And 
+   since we have two degrees of freedom finding the minimum energy value is not as straight forward. Ondrej suggested to use fix one of the
+   variables and find the minimum energy of the other then so we obtain the ratio between of the two values that satisfies the minimum energy.
+ - Before however committing to the global bucklink mode derivation we first verify the first mode and we can do the derivation then together.
+   I'll have a meeting with Ondrej on Thursday morning where we can discuss things furhter.
+
+Substitution approach
+ - Next we discussed the substitution of the rigid section in the stability analysis.
+ - There was some back and forth about how I implemented the transformation but as the DNS lines up with the transformation using a static
+   equilibrium problem for various cases we assumed it to be correct.
+ - One thing that we could not place are the values of the rotations as we obtain large rotation values that do not make a lot of sense if
+   they are in radians.
+ - Where static equilibrium equations work well with the transformed matrix, stability analysis equations do not. The transformation matrix
+   on the geometric stiffness matrix is not of sufficient high order. Since equal transformation is applied on both matrices the same 
+   lambda is acquired.
+ - This was unexpected for Ondrej as he had expected the transformation would work.
+ - Since this approach did not yield the wanted results we will proceed with the energy approach.
+
+Report 
+ - The outline of the report is still not fully set.
+ - We can make a distinction between the exploring the design space and the investigation in the global and local buckling pattern. 
+ - We can follow this distinction and write the report in part A and part B but this would yield two seperate thesises bascially which
+   is not ideal. 
+ - It depends on the outcome of part B how we will structure the report
+ - Monday we have a meeting with Ron as well and then we can also discuss the report structure.
+
+TASKS THIS WEEK
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - Solve single column equations with quadratic extension - energy approach
+ - Check accuracy of energy approach with DNS simulations
+ - Find out what the rotations actually mean in the analytical vergeet-me-nietjes

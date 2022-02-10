@@ -1,0 +1,27 @@
+Meeting 49 11-01-2022
+
+Attending:
+ Thijs Oudes
+ Ondrej Rokos
+
+DISCUSSION
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - Geometric stiffness matrix
+
+ - duration presentation 30 min 
+
+ - Planning friday
+
+ - presentation bram
+
+
+SUMMARY MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - Transition how MM could be used for design of microstructures
+	multiple patterning modes
+
+ - content slide
+	Road map next along slides to give the viewer a better structure of the presentation
+	

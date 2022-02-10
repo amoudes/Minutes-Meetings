@@ -67,6 +67,6 @@ TASKS THIS WEEK
 
  x Implement condenstation method
   x use half beam width
- - Perform parametric study
- - Prepare slides mid-term presentation
- - Think of name of the project
+ x Perform parametric study
+ x Prepare slides mid-term presentation
+ x Think of name of the project

@@ -1,0 +1,70 @@
+Meeting 40 09-11-2021
+
+Attending:
+ Thijs Oudes
+ Ondrej Rokos
+ Ron Peerlings
+
+DISCUSSION
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - Derivation analytical solution
+
+ - Report structure
+
+ - Possibilities extension
+ 
+NOTES MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+ 
+ - Plan the defence in the second week of the new year. week of 10th of January
+  - submit just before christmas
+
+SUMMARY MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - We started the meeting off by discussing the possibilities for extendig the thesis for a few weeks. We ended up with the conclusion that 
+   we would postpone the project by a few weeks. The presentation is set at Friday January 14th, and I will have to have the draft paper
+   finished by December 23rd.
+ - I decided that I will be writing a draft paper instead of a report. This is my prefered option. I have never written a paper before and
+   it is a good opportunity for me to get some experience for that as well.
+ - I will have to think about the structure of the paper and think of where I want to place certain elements
+   Suggested structure by Ron:
+   - Introduction
+   - Numerics
+   - Analytical derivations
+   - Conclusion
+   Actual structure and content may vary.
+ - I decided that I will put the design space study into the appendix as it is not the core of the thesis and I the extent at which I tested
+   the design space is not necessary to cover in the introduction.
+ - We decided that I will set up a report structure and mail it to Ron and Ondrej by Thursday so that we can discuss it during our next
+   meeting on Monday.
+ 
+ Analytical model:
+ - Overall Ron and Ondrej were quite pleased with the results of the energy approach. Although Ron was a bit surprised that the energy approach
+   also lead to the derivation of the critical load, he could later understand where it was comming from. 
+ - We discussed the source of the error of the local buckling pattern and from how I understood it, the error stemt from the comparison
+   assumption of the deflected shape with added rigid parts.
+   Other sources of the error we also discussed. In particular Ondrej thought that the error came from the linear approximation of the
+   prescribed displacement of the rigid parts. I tested this and the decrease of error when using a higher order approximation was very
+   small, if not negligeble.
+ - Since the model is quite accurate we decided not to pursue higher accuracy. As Ron framed it: "It is not our goal to obtain an accurate
+   model but to capture the mechanics."
+   Capturing the mechnics is certainly does. The analytical solution nicely follows the FE LBA solution for global and local buckling. The 
+   transition point lies is accurate up to a certain percentage which is very nice.
+
+ Analytical model next steps:
+ - The last step that would really finish up the thesis is to connect the analytical model back to the DNS simulations. I dicussed this a bit
+   more with Ondrej as well and he has some ideas too.
+ - Since infinitely rigid islands can not exist in reality or DNS we consider a cruciform hole where we vary the ratio between length of thick
+   and thin segments.
+ - What we have to think about is comming up with an equivalent ratio (rho) for cruciform holes such that we can place the result of the DNS
+   simulations in the graph and verify its accuracy.
+ - For consistency we will make use of LBA on the 2x2 cruciform example instead of bifurcation analysis to obtain the critical loads.
+ - This is not implemented yet and Ondrej will provide me with some code.
+
+TASKS THIS WEEK
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - Set up structure draft paper
+ - Compare analytical model back DNS LBA 2x2 cruciform and think of equivalent rho

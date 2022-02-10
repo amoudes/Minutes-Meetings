@@ -1,0 +1,77 @@
+Meeting 47 20-12-2021
+
+Attending:
+ Thijs Oudes
+ Ondrej Rokos
+ Ron Peerlings
+
+DISCUSSION
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Questions:
+1) Introduction:
+	- graded microstructure how to include it then?
+	- Short introduction? you mentioned to keep it brief, so why comment brief now?
+	- what do you mean by introduce geometry a little?
+	- comment on small literature review
+		- include theory on instabilities
+	
+
+2) Numerical study:
+	- "horizontal displacement is not restricted other than the fixed bottom left corner?"
+	   what do you mean by this?
+		- displacement only on control node on left top
+		  "overall compressive strain via the control nodes."
+	- How was geometric stiffness matrix constructed again? -> Q for Ondrej
+	- Normalization of the constitutive parameters
+	- Colours and what quantitity to plot in Fig. 3.
+	- Formulation of explanation of normalization wrt Euler critical load.
+	
+
+	- for paper: lmit fig 4.
+
+3) Analytical model:
+	- Fig. 5 why are beams clamped in the islands and other proposed changs.
+	- p7 ~ be sharper on assumptions
+	- Fig. 6 Other proposed designs for unit cell.
+	- More convenient to put x=0 at the center - with current derivation: No
+	- p8 ~ "or 4 that of half a ligament"
+	- p8 ~ "you already did this in the second step" I do not understand
+	- p9 ~ Energy as written per unit cell so as a function of area of volume.... - How?
+	- p9 ~ "why not include rho straight away in derivations" true - but all derivations were already done in L and l so I decided
+               to do this last.
+	- p10~ Why cross out hor and ver in subscripts?
+	- Discuss factor why factor 2 in normalization with Fe
+	- Fig. 7 Why inclusion of numerical results matters. Also include few deformed geometries as insets.
+
+4) Application:
+	- Discuss what we mean by promoting buckling.
+		- how else to frame promoting buckling:
+			if the two modes are far apart you can be sure that the lowest mode occur.
+			if the two modes are close you can not be sure to which mode occurs
+			hard to predict which mode happens
+			- include discussion on the top two.
+			- guarantee that one modes happens without the other mode from occuring
+	- p13 "isn't it more natural to look at the ratio" what do you mean by ratio?
+	- Discuss Table 2.
+
+5) Conclusion: 
+	- "Isn't it an insight also that both modes are possible but the one with the lowest buckling load is selected.
+	  At the transition this changes. - I included this in the description in Sec. 1 or 2.
+	- Low number of refs. - correct, explain why.
+
+ Misc:
+	- would joint be a good word to describe the connection point between hor and ver ligaments
+
+
+Incluce preface and appendix
+
+
+NOTES MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+SUMMARY MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+TASKS THIS WEEK
+---------------------------------------------------------------------------------------------------------------------------------------------

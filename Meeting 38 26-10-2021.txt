@@ -1,0 +1,59 @@
+Meeting 38 26-10-2021
+
+Attending:
+ Thijs Oudes
+ Ondrej Rokos
+ Ron Peerlings - in first meeting of the day
+
+DISCUSSION
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ Q - derivation single column beam
+
+ Q - how to set up connectivity L-bracket
+
+   - energy analysis in buckled state
+
+NOTES MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+SUMMARY MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ Meeting with Ron and Ondrej
+ - In this meeting we discussed the progress over the last two weeks. 
+ - We discussed how we proceede with the single column and how we wanted to proof that the beam only buckls globally when having without
+   lateral bracing (spring or contact). Since we wanted to know if if the beam ever buckles locally with added rigid parts we were tried to
+   extend the model into that direction but the derivation turns out to be more difficult than we expected.
+   Since we are interested in the effect of the horizontal bars as well Ron suggested not to spend too much time any more on this single
+   column model.
+ - What Ron had in mind after the previous meeting was something with a rigid island that rotated and an energy approach where we would
+   determine the stored energy in the system. For this we would use the deformed state as (as opposed to the buckled state) and then determine
+   the stored energy. Since this would involve non-linear effects we did not go into this direction before however as the other approach also 
+   turns out to be difficult we will try this method as well.
+ - For both configurations (global and local) we would use the deformed, post-buckled state to determine the internal energy in the L-bracket.
+   The more preferential state would be the state with the lower internal energy and hopefull we would see an intersection of the two energies
+   meaning that the transition occurs at that point.
+ - The local deformed state would be easier to do as we have only 1 DOF, the global state is more difficult as we would need the relation
+   between sway Delta and rotation.
+ - We discussed more things about simplifying the model more but could not find easier approaches.
+ - The eneryg approach assumes no compression in the axial direction. I could test if this holds true is I make the axial stiffness very large
+   and if that does not lead to very large buckling values.
+
+ Meetin with Ondrej in the afternoon
+ - During this meeting we discussed more the techniqualites and implementations and the questions I had from previous week.
+ - The extention of the analytical model by Ochoa could be made simpler by putting the origin of the deflection at the lower point of the 
+   leaf spring and only adding the rigid parts in the moments. This would yield a non-linear system and could be made linear by assuming 
+   small rotations.
+ - I wanted to implement the L-bracket without the aid of additional nodes and very rigid elements so that I truly have only three DOF left.
+   A solution for this would be hanging nodes and linking the nodes of the leaf spring to the hanging nodes.
+ - ...
+
+TASKS THIS WEEK
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - Verify axial compression (make it very large and check for noteable effects).
+ - Perform eneryg approach for local and global buckling
+ - Derive equations for column with rigid sections using new insights.
+ - Hangning nodes in for FE implementation using transformation matrix.
+ - Translation from L-bracket to single column using stiffness matrix condensation (as I did before). 

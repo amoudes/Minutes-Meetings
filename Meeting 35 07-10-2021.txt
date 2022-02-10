@@ -1,0 +1,80 @@
+Meeting 35 07-10-2021
+
+Attending:
+ Thijs Oudes
+ Ondrej Rokos
+ Ron Peerlings
+
+DISCUSSION
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - Setup analytical model
+	improvement over last iteration
+
+ - 
+ - 
+NOTES MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+ 
+ - keep springs and increase the ratio slowly. write down analytical model.
+ - integrating EIkappa^2
+ - use "vergeetmenietjes"
+ - higher order effects
+ 
+ - L-bracket analytical model. compute energy. assume some deformation
+ - leaf shape argument
+
+ - assume vertical deflection comes from horizontal deflection
+
+
+SUMMARY MEETING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - Today's meeting was a bit harder for me to follow. I had trouble with understanding the high level concepts that Ondrej and Ron put out.
+ - Mainly discussed the single column model and how to approach it from an analytical perspective. It turns out it is more complex than we
+   had thought.
+
+Single column model
+ - In short, I showed him the different buckling modes of single column with various boundary conditions and that we think it is not possible
+   to obtain both global and local buckling using a single column without the aid of translational and rotational springs.
+ - He agreed on the rotational springs but still found the translational springs hard to place in a physical context. Ondrej had the argument
+   about minimization of curvature which somewhat made sense to Ron.
+ - Ron suggested to connect a horizontal column as well to the model and then construct both a model with b.c. for global and local buckling.
+   We would then compute the buckling modes and the lower one of the two would occur first based on the assumption of minimization of energy.
+   In a more discrete way, using only three elements this model would also allow us to set up an analytical model giving us insight in the 
+   internal energy of the beams for various thickness ratios. We would call this solution the L-bracket.
+ - To test whether it is actually possible to get local and global buckling in these cases we would take it to the extreme where we will
+   make on column section rigid and hopefully we will see that the beam buckles locally then.
+ - Another approach we thought of at the end of the meeting was to think of the thin beams as leaf springs and the thick beams as rigid
+   islands. By increasing or decreasing the size of those islands we should change the location of the bending moments and go from global to
+   local buckling. Ron mentioned that this could also be a feasible way to set up an analytical model.
+
+Frame model and connection to single column model
+ - We showed that the single column model is able to capture global and local buckling however the quantitative comparison between the frame
+   model (actual mechanics) and single column model is not accurate. The single column model buckles locally much sooner than the frame model.
+   Hence Ron suggested that we could only use this single column model to get qualitative comparison but not quantitative with which I agree.
+   It thus turns out that the effect of the horizontal beam can not simply be described using a horizontal spring and that the effect of the
+   horizontal beam including geometric stiffness matrix has to be taken into account. 
+
+Meeting with just Ondrej
+ - After the meeting with Ron it still was not perfectly clear to me what I could do in practice therefore I still spoke with Ondrej for a
+   bit.
+ - He mentioned that before we would move to a full analytical model we would first do a proof of concept for both modeling approaches.
+   So set up two models one for global and one for local. Do the LBA and see what if the lowest eigenvalues correspond to the buckling modes
+   we expect from the frame analysis. If they do not match we should probably take into account non-linear effects in the BA. 
+ - I should do these proof of concepts for both models:
+   - leaf spring model
+   - L-bracket model
+ - On a technical level Ondrej mentioned that implementing both methods should not be too difficult. I have most of the components already at
+   the place.
+   For global buckling I should make sure that the rotations are all the same and linked. Thus periodicity and let the horizontal displacement
+   of the horizontal bar remain free.
+   For local bucklinkg I should maek sure that to implement symmetry condidionts. So some rotations are opposite. Fix horizontal displacement
+   of horizontal bar.
+
+TASKS THIS WEEK
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ - I should do these proof of concepts for both models:
+   - leaf spring model
+   - L-bracket model
